@@ -17,7 +17,7 @@ position = Vector2(222, 118)
 position = Vector2(154, 233)
 
 [node name="PointLight2D" type="PointLight2D" parent="FatCat"]
-energy = 0.5
+energy = 0.8
 texture = ExtResource("4_qx8n5")
 texture_scale = 0.75
 
