@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=7 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
 [ext_resource type="PackedScene" uid="uid://krcrgk7ddf8" path="res://scenes/piano.tscn" id="2_qla7i"]
 [ext_resource type="PackedScene" uid="uid://du8n2u6bk366n" path="res://scenes/baby.tscn" id="3_n3qp0"]
 [ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="4_qx8n5"]
+[ext_resource type="PackedScene" uid="uid://b3adqkmggnbq1" path="res://scenes/laser.tscn" id="6_usot1"]
 
 [node name="Level1" type="Node"]
 
@@ -12,6 +13,9 @@
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
 position = Vector2(222, 118)
+
+[node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
+position = Vector2(328, 345)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(154, 233)
@@ -30,8 +34,14 @@ drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 
-[node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
-position = Vector2(328, 345)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+
+[node name="LaserPosition" type="Marker2D" parent="."]
+position = Vector2(178, 407)
+
+[node name="Laser" parent="LaserPosition" instance=ExtResource("6_usot1")]
+self_modulate = Color(1, 1, 1, 0.286275)
+position = Vector2(-178, -407)
+width = 1.0
+default_color = Color(1, 0, 0, 1)
