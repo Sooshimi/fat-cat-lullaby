@@ -10,7 +10,7 @@
 position = Vector2(372, 102)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
-position = Vector2(294, 223)
+position = Vector2(24, 21)
 
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
 position = Vector2(431, 288)
