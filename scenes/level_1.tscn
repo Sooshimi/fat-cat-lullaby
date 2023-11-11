@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=4 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
 [ext_resource type="PackedScene" uid="uid://krcrgk7ddf8" path="res://scenes/piano.tscn" id="2_qla7i"]
+[ext_resource type="PackedScene" uid="uid://du8n2u6bk366n" path="res://scenes/baby.tscn" id="3_n3qp0"]
 
 [node name="Level1" type="Node"]
 
@@ -10,3 +11,6 @@ position = Vector2(372, 102)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(294, 223)
+
+[node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
+position = Vector2(431, 288)

@@ -9,7 +9,7 @@ func _unhandled_input(_event):
 
 func check_key_order():
 	for i in keys_played.size():
-		var letter = keys_played[i]
+		var letter : String = keys_played[i]
 		if letter != lullaby[i]:
 			keys_played = []
 	

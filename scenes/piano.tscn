@@ -26,6 +26,8 @@ texture = ExtResource("1_nh7hx")
 hframes = 2
 
 [node name="KeyCArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyCArea"]
@@ -36,6 +38,8 @@ shape = SubResource("RectangleShape2D_pj875")
 stream = ExtResource("2_56j7u")
 
 [node name="KeyDArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDArea"]
@@ -46,6 +50,8 @@ shape = SubResource("RectangleShape2D_ep7j2")
 stream = ExtResource("3_ne8cn")
 
 [node name="KeyEArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyEArea"]
