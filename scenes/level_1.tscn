@@ -23,6 +23,12 @@ texture_scale = 0.75
 
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.3
+drag_top_margin = 0.3
+drag_right_margin = 0.3
+drag_bottom_margin = 0.3
 
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
 position = Vector2(328, 345)
