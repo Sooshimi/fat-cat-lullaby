@@ -7,17 +7,17 @@
 [ext_resource type="AudioStream" uid="uid://y5j0aeedk6i8" path="res://audio/5C.ogg" id="4_x76qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
-size = Vector2(4, 9.5)
+size = Vector2(3.5, 9.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7j2"]
-size = Vector2(4, 9.5)
+size = Vector2(3.5, 9.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l27jq"]
-size = Vector2(4, 9.5)
+size = Vector2(3.5, 9.25)
 
 [node name="Piano" type="Node2D"]
 position = Vector2(-1, 0)
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 script = ExtResource("1_w4nf5")
 metadata/_edit_group_ = true
 
@@ -29,7 +29,7 @@ hframes = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyCArea"]
-position = Vector2(-18, 7.75)
+position = Vector2(-17.75, 7.625)
 shape = SubResource("RectangleShape2D_pj875")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyCArea"]
@@ -39,7 +39,7 @@ stream = ExtResource("2_56j7u")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDArea"]
-position = Vector2(-13, 7.75)
+position = Vector2(-12.75, 7.625)
 shape = SubResource("RectangleShape2D_ep7j2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyDArea"]
@@ -49,7 +49,7 @@ stream = ExtResource("3_ne8cn")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KeyEArea"]
-position = Vector2(-8, 7.75)
+position = Vector2(-7.75, 7.625)
 shape = SubResource("RectangleShape2D_l27jq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyEArea"]
