@@ -23,7 +23,7 @@ func _physics_process(delta):
 
 func chase_player(player_position:Vector2):
 	# Sets chase condition if player is within range
-	if position.distance_to(player_position) < 150:
+	if position.distance_to(player_position) < 100:
 		chase = true
 	
 	if chase:

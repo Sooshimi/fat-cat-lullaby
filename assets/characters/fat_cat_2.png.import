@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0auuxip3y0ge"
-path="res://.godot/imported/baby_neutral_front.png-cc9b7eaa1eb25eb58c393e252be9162b.ctex"
+uid="uid://bmv40dbws6lkj"
+path="res://.godot/imported/fat_cat_2.png-485ca54cb9b4f2d1549138ef5491349e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baby_neutral_front.png"
-dest_files=["res://.godot/imported/baby_neutral_front.png-cc9b7eaa1eb25eb58c393e252be9162b.ctex"]
+source_file="res://assets/characters/fat_cat_2.png"
+dest_files=["res://.godot/imported/fat_cat_2.png-485ca54cb9b4f2d1549138ef5491349e.ctex"]
 
 [params]
 
