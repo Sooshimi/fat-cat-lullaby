@@ -3,16 +3,21 @@ extends Node
 var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
 
-func _unhandled_input(_event):
+func _unhandled_input(_event) -> void:
 	if Input.is_action_pressed("escape"):
 		get_tree().quit()
 
-func check_key_order():
+func check_key_order() -> void:
+	# Check every key pressed by player
 	for i in keys_played.size():
-		var letter : String = keys_played[i]
-		if letter != lullaby[i]:
+		# Get the string of the actual key played
+		var key : String = keys_played[i]
+		# Check if the key doesn't match the corresponding lullaby note
+		if key != lullaby[i]:
+			# Reset array if wrong notes played in order
 			keys_played = []
 	
+	# Correct if entire played array matches the order of notes in the lullaby
 	if keys_played == lullaby:
 		print("Correct order!")
 		keys_played = []

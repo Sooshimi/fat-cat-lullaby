@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 50
+var speed := 50
 var player : Node
 var relative_direction : Vector2
 var collision
@@ -8,10 +8,10 @@ var chase : bool
 
 @export var animation_tree : Node
 
-func _ready():
+func _ready() -> void:
 	animation_tree.active = true
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	player = get_parent().get_node("FatCat")
 	
 	# Get relative direction between player and enemy position.
@@ -28,7 +28,7 @@ func _physics_process(delta):
 	
 	chase_player(player.position)
 
-func chase_player(player_position:Vector2):
+func chase_player(player_position:Vector2) -> void:
 	# Sets chase condition if player is within range
 	if position.distance_to(player_position) < 100:
 		chase = true
@@ -37,7 +37,7 @@ func chase_player(player_position:Vector2):
 		# Sets velocity which changes based on relative direction
 		velocity = Vector2(relative_direction * speed)
 
-func play_move_animations():
+func play_move_animations() -> void:
 	# If enemy not moving, travel to idle animation
 	if velocity == Vector2.ZERO:
 		animation_tree.get("parameters/playback").travel("Idle")

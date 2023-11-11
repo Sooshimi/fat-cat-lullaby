@@ -1,23 +1,23 @@
 extends CharacterBody2D
 
-var speed := 100
+var speed : float = 100
 var target : Vector2
 var is_moving : bool
 var is_jumping : bool
 var collision
 
-func _ready():
+func _ready() -> void:
 	# Stop cat moving at first launch of game
 	target = global_position
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	get_input(delta)
 	
 #	if collision:
 #		# Allows player to slide on walls
 #		velocity = velocity.slide(collision.get_normal())
 
-func get_input(delta):
+func get_input(delta) -> void:
 	if Input.is_action_just_pressed("left_click") && !is_moving:
 		target = get_global_mouse_position()
 		is_moving = true

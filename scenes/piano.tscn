@@ -7,13 +7,13 @@
 [ext_resource type="AudioStream" uid="uid://y5j0aeedk6i8" path="res://audio/5C.ogg" id="4_x76qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
-size = Vector2(3.5, 9.25)
+size = Vector2(3, 7.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7j2"]
-size = Vector2(3.5, 9.25)
+size = Vector2(3, 7.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l27jq"]
-size = Vector2(3.5, 9.25)
+size = Vector2(3, 7.75)
 
 [node name="Piano" type="Node2D"]
 position = Vector2(-1, 0)
