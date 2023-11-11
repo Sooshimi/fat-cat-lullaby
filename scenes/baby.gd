@@ -6,6 +6,11 @@ var relative_direction : Vector2
 var collision
 var chase : bool
 
+@export var animation_tree : Node
+
+func _ready():
+	animation_tree.active = true
+
 func _physics_process(delta):
 	player = get_parent().get_node("FatCat")
 	
@@ -14,6 +19,8 @@ func _physics_process(delta):
 	relative_direction = (player.position - position).normalized()
 	
 	collision = move_and_collide(velocity * delta)
+	
+	play_move_animations()
 	
 	if collision:
 		# Allows enemy to slide on walls
@@ -29,3 +36,14 @@ func chase_player(player_position:Vector2):
 	if chase:
 		# Sets velocity which changes based on relative direction
 		velocity = Vector2(relative_direction * speed)
+
+func play_move_animations():
+	# If enemy not moving, travel to idle animation
+	if velocity == Vector2.ZERO:
+		animation_tree.get("parameters/playback").travel("Idle")
+	else:
+		# If enemy moving, travel to walk animation
+		# Set blend positions (directions) of animations based on relative direction
+		animation_tree.get("parameters/playback").travel("Run")
+		animation_tree.set("parameters/Idle/blend_position", relative_direction)
+		animation_tree.set("parameters/Run/blend_position", relative_direction)
