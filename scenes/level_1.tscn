@@ -21,6 +21,9 @@ energy = 0.5
 texture = ExtResource("4_qx8n5")
 texture_scale = 0.75
 
+[node name="Camera2D" type="Camera2D" parent="FatCat"]
+position_smoothing_enabled = true
+
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
 position = Vector2(328, 345)
 
