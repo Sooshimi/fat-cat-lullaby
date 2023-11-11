@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed := 50
+var speed := 40
 var player : Node
 var relative_direction : Vector2
 var collision

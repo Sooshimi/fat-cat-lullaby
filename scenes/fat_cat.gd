@@ -31,6 +31,7 @@ func get_input(delta) -> void:
 	else:
 		# 'i' variable is to stop this block running more than once. 
 		if global_position.distance_to(target) < 3 && i == 1:
+			# SLIDING
 			i = 0
 			is_moving = false
 			# Start window where jump action is allowed shortly during slide
@@ -47,9 +48,17 @@ func get_input(delta) -> void:
 		
 		# Allow one jump during this window
 		if Input.is_action_just_pressed("jump") && !jump_window.is_stopped() && is_grounded:
+			# JUMPING
+			print("Jump")
 			is_grounded = false
 			jump_duration.start()
-			print("Jump")
+			
+			# Sets mouse position as the jumping target
+			target = get_global_mouse_position()
+		
+		# New velocity when jumping
+		if !is_grounded:
+			velocity = global_position.direction_to(target) * speed
 
 func _on_jump_duration_timeout():
 	is_grounded = true
