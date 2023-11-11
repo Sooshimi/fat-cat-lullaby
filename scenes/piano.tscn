@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://krcrgk7ddf8"]
 
-[ext_resource type="Texture2D" uid="uid://cf5ei57s2p264" path="res://assets/Piano1.png" id="1_nh7hx"]
 [ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
+[ext_resource type="Texture2D" uid="uid://cf5ei57s2p264" path="res://assets/items/Piano1.png" id="2_3xi4p"]
 [ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/3C.ogg" id="2_56j7u"]
 [ext_resource type="AudioStream" uid="uid://ba5p0a3dd3e4g" path="res://audio/4C.ogg" id="3_ne8cn"]
 [ext_resource type="AudioStream" uid="uid://y5j0aeedk6i8" path="res://audio/5C.ogg" id="4_x76qk"]
@@ -22,7 +22,7 @@ script = ExtResource("1_w4nf5")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_nh7hx")
+texture = ExtResource("2_3xi4p")
 hframes = 2
 
 [node name="KeyCArea" type="Area2D" parent="."]

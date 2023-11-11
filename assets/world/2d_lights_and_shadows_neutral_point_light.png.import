@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnp6tq7syq1h4"
-path="res://.godot/imported/Room_Builder_free_48x48.png-6b4347a5660dc37319001afaf027f541.ctex"
+uid="uid://vf3o78sc1ww1"
+path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.png-ec7ad9a52a4392675374e5d9857fc4be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/Room_Builder_free_48x48.png"
-dest_files=["res://.godot/imported/Room_Builder_free_48x48.png-6b4347a5660dc37319001afaf027f541.ctex"]
+source_file="res://assets/world/2d_lights_and_shadows_neutral_point_light.png"
+dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.png-ec7ad9a52a4392675374e5d9857fc4be.ctex"]
 
 [params]
 
