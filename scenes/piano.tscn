@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://krcrgk7ddf8"]
+
+[ext_resource type="Texture2D" uid="uid://cf5ei57s2p264" path="res://assets/Piano1.png" id="1_nh7hx"]
+[ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
+[ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/3C.ogg" id="2_56j7u"]
+[ext_resource type="AudioStream" uid="uid://ba5p0a3dd3e4g" path="res://audio/4C.ogg" id="3_ne8cn"]
+[ext_resource type="AudioStream" uid="uid://y5j0aeedk6i8" path="res://audio/5C.ogg" id="4_x76qk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
+size = Vector2(4, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7j2"]
+size = Vector2(4, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l27jq"]
+size = Vector2(4, 9.5)
+
+[node name="Piano" type="Node2D"]
+position = Vector2(-1, 0)
+scale = Vector2(3, 3)
+script = ExtResource("1_w4nf5")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nh7hx")
+hframes = 2
+
+[node name="KeyCArea" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyCArea"]
+position = Vector2(-18, 7.75)
+shape = SubResource("RectangleShape2D_pj875")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyCArea"]
+stream = ExtResource("2_56j7u")
+
+[node name="KeyDArea" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDArea"]
+position = Vector2(-13, 7.75)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyDArea"]
+stream = ExtResource("3_ne8cn")
+
+[node name="KeyEArea" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyEArea"]
+position = Vector2(-8, 7.75)
+shape = SubResource("RectangleShape2D_l27jq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyEArea"]
+stream = ExtResource("4_x76qk")
+
+[connection signal="body_entered" from="KeyCArea" to="." method="_on_key_c_area_body_entered"]
+[connection signal="body_entered" from="KeyDArea" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="KeyEArea" to="." method="_on_key_e_area_body_entered"]

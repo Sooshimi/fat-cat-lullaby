@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwkocmqpyoa2o"]
+
+[ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
+[ext_resource type="PackedScene" uid="uid://krcrgk7ddf8" path="res://scenes/piano.tscn" id="2_qla7i"]
+
+[node name="Level1" type="Node"]
+
+[node name="Piano" parent="." instance=ExtResource("2_qla7i")]
+position = Vector2(372, 102)
+
+[node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
+position = Vector2(294, 223)
