@@ -34,4 +34,4 @@ drag_bottom_margin = 0.3
 position = Vector2(328, 345)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+color = Color(0.0745098, 0.0745098, 0.0745098, 1)
