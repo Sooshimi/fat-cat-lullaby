@@ -9,6 +9,9 @@
 
 [node name="Level1" type="Node"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
@@ -33,9 +36,6 @@ drag_left_margin = 0.3
 drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 
 [node name="LaserPosition" type="Marker2D" parent="."]
 position = Vector2(178, 407)

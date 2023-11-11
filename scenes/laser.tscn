@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3adqkmggnbq1"]
+[gd_scene load_steps=3 format=3 uid="uid://b3adqkmggnbq1"]
 
 [ext_resource type="Script" path="res://scenes/laser.gd" id="1_dwcdn"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bgm0k"]
+light_mode = 1
+
 [node name="Laser" type="Line2D"]
+material = SubResource("CanvasItemMaterial_bgm0k")
 script = ExtResource("1_dwcdn")
