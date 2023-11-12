@@ -10,23 +10,21 @@
 [node name="Level1" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
-position = Vector2(-113, 14)
+position = Vector2(-11, 90)
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
-position = Vector2(222, 118)
+position = Vector2(162, 140)
 
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
 position = Vector2(310, 315)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
-position = Vector2(154, 233)
+position = Vector2(-160, 229)
 
 [node name="PointLight2D" type="PointLight2D" parent="FatCat"]
-visible = false
 energy = 0.8
 shadow_enabled = true
 texture = ExtResource("4_qx8n5")

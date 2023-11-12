@@ -44,8 +44,6 @@ func _physics_process(delta) -> void:
 				is_grounded = true
 				jump_window.start()
 	
-	collision = move_and_collide(velocity * delta, false, 0.00)
-	
 	# Cat rolling or jumping
 	if is_rolling || !is_grounded:
 		# Move cat
@@ -66,3 +64,11 @@ func _physics_process(delta) -> void:
 			start_jump_position = global_position
 			# Sets mouse position as the jumping target
 			target = get_global_mouse_position()
+	
+	collision = move_and_collide(velocity * delta, false, 0.00)
+	
+	if collision:
+		is_rolling = false
+		is_grounded = true
+		# Allows player to slide on walls
+		velocity = velocity.slide(collision.get_normal())
