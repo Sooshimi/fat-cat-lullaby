@@ -53,7 +53,7 @@ func _physics_process(delta) -> void:
 	# Cat sliding
 	else:
 		# Short cat slide after rolling/jumping has finished
-		velocity = velocity.move_toward(Vector2.ZERO, 7)
+		velocity = velocity.move_toward(Vector2.ZERO, 8)
 		
 		# Allow one jump during this window
 		if Input.is_action_just_pressed("jump") && !jump_window.is_stopped() && is_grounded:
