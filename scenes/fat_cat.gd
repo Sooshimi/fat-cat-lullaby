@@ -6,6 +6,8 @@ var is_rolling : bool
 var is_jumping : bool
 var is_grounded : bool = true
 var collision
+var start_roll_position : Vector2
+var max_roll_length : int = 50
 
 @onready var roll_cooldown : Node = $RollCooldown
 @onready var jump_window : Node = $JumpWindow
@@ -17,11 +19,14 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	if Input.is_action_just_pressed("left_click") && !is_rolling:
+		start_roll_position = global_position
 		target = get_global_mouse_position()
 		is_rolling = true
 	else:
 		# 'i' variable is to stop this block running more than once. 
-		if global_position.distance_to(target) < 5 && is_rolling:
+		if (global_position.distance_to(target) < 5) ||\
+			(global_position.distance_to(start_roll_position) > max_roll_length) &&\
+			is_rolling:
 			# SLIDING
 			# Turn player collision box back on after landing
 			collision_shape.disabled = false
@@ -52,9 +57,9 @@ func _physics_process(delta) -> void:
 			# Sets mouse position as the jumping target
 			target = get_global_mouse_position()
 	
-	if !is_grounded:
-		# New velocity and direction when jumping
-		velocity = global_position.direction_to(target) * speed
+#	if !is_grounded:
+#		# New velocity and direction when jumping
+#		velocity = global_position.direction_to(target) * speed
 	
 #	if collision:
 #		# Allows player to slide on walls
