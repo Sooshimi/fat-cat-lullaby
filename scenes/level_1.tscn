@@ -19,7 +19,7 @@ position = Vector2(-113, 14)
 position = Vector2(222, 118)
 
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
-position = Vector2(328, 345)
+position = Vector2(310, 315)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(154, 233)
@@ -28,7 +28,7 @@ position = Vector2(154, 233)
 energy = 0.8
 shadow_enabled = true
 texture = ExtResource("4_qx8n5")
-texture_scale = 0.75
+texture_scale = 0.9
 
 [node name="Camera2D" type="Camera2D" parent="FatCat"]
 position_smoothing_enabled = true
