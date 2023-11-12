@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5d58g"]
 radius = 5.0
-height = 18.0
+height = 14.0
 
 [node name="FatCat" type="CharacterBody2D"]
 collision_mask = 30
