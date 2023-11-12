@@ -28,6 +28,11 @@ window/size/window_width_override=1080
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="/Users/Mason/Desktop/godot_rec.avi"
+
 [input]
 
 jump={

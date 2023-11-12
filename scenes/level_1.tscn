@@ -13,6 +13,7 @@
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
+position = Vector2(-113, 14)
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
 position = Vector2(222, 118)
@@ -25,6 +26,7 @@ position = Vector2(154, 233)
 
 [node name="PointLight2D" type="PointLight2D" parent="FatCat"]
 energy = 0.8
+shadow_enabled = true
 texture = ExtResource("4_qx8n5")
 texture_scale = 0.75
 
@@ -37,11 +39,10 @@ drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
 
-[node name="LaserPosition" type="Marker2D" parent="."]
-position = Vector2(178, 407)
-
-[node name="Laser" parent="LaserPosition" instance=ExtResource("6_usot1")]
+[node name="Laser" parent="." instance=ExtResource("6_usot1")]
 self_modulate = Color(1, 1, 1, 0.286275)
-position = Vector2(-178, -407)
 width = 1.0
 default_color = Color(1, 0, 0, 1)
+
+[node name="LaserPosition" type="Marker2D" parent="Laser"]
+position = Vector2(172, 491)
