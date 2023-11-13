@@ -36,7 +36,7 @@ noise = SubResource("FastNoiseLite_g8skw")
 [node name="Level1" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
 position = Vector2(-165, -137)
@@ -88,7 +88,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 
 [node name="Grain" type="TextureRect" parent="FatCat/Camera2D/CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0.0392157)
+self_modulate = Color(1, 1, 1, 0.0313726)
 offset_right = 512.0
 offset_bottom = 512.0
 texture = SubResource("NoiseTexture2D_qk3ee")
