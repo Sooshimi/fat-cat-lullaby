@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://co6vwrmogijxe"]
+
+[ext_resource type="Texture2D" uid="uid://g1fsnkmkgs8o" path="res://assets/items/police.png" id="1_8hant"]
+[ext_resource type="Script" path="res://scenes/items/toy_police_car.gd" id="1_cavim"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvv5d"]
+radius = 3.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pbk2"]
+radius = 4.0
+height = 32.0
+
+[node name="ToyPoliceCar" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
+gravity_scale = 2.66454e-15
+freeze = true
+script = ExtResource("1_cavim")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8hant")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0234375, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vvv5d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2pbk2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="NoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

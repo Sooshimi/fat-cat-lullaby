@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=10 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="4_qx8n5"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="6_k6mst"]
 [ext_resource type="PackedScene" uid="uid://b3adqkmggnbq1" path="res://scenes/laser.tscn" id="6_usot1"]
+[ext_resource type="PackedScene" uid="uid://co6vwrmogijxe" path="res://scenes/items/toy_police_car.tscn" id="8_cu1mq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -31,6 +32,9 @@ position = Vector2(-165, -137)
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
 position = Vector2(162, 140)
+
+[node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
+position = Vector2(115, 301)
 
 [node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
 position = Vector2(310, 315)
@@ -73,7 +77,6 @@ grow_vertical = 2
 size_flags_horizontal = 0
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
-width = 1.0
 
 [node name="LaserPosition" type="Marker2D" parent="Laser"]
-position = Vector2(172, 491)
+position = Vector2(174, 571)
