@@ -22,11 +22,13 @@ position = Vector2(162, 140)
 position = Vector2(310, 315)
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
-position = Vector2(-160, 229)
+position = Vector2(185, 261)
 
 [node name="PointLight2D" type="PointLight2D" parent="FatCat"]
 energy = 0.8
 shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 2.0
 texture = ExtResource("4_qx8n5")
 texture_scale = 0.9
 
