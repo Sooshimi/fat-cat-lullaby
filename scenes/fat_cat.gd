@@ -26,8 +26,8 @@ func _physics_process(delta) -> void:
 		is_rolling = true
 	else:
 		# Limit roll length, to distance of mouse click, or max roll length
-		if (global_position.distance_to(target) < 5) ||\
-			(global_position.distance_to(start_roll_position) > max_roll_length) &&\
+		if ((global_position.distance_to(target) < 5) ||\
+			(global_position.distance_to(start_roll_position) > max_roll_length)) &&\
 			is_rolling:
 				# Turn player collision box back on after landing
 				collision_shape.disabled = false
@@ -36,8 +36,8 @@ func _physics_process(delta) -> void:
 				# Start window where jump action is allowed shortly during slide
 				jump_window.start()
 		# Limit jump length, to distance of mouse click, or max jump length
-		elif (global_position.distance_to(target) < 5) ||\
-			(global_position.distance_to(start_jump_position) > max_jump_length) &&\
+		elif ((global_position.distance_to(target) < 5) ||\
+			(global_position.distance_to(start_jump_position) > max_jump_length)) &&\
 			!is_grounded:
 				collision_shape.disabled = false
 				is_rolling = false
