@@ -73,9 +73,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
-self_modulate = Color(1, 1, 1, 0.286275)
 width = 1.0
-default_color = Color(1, 0, 0, 1)
 
 [node name="LaserPosition" type="Marker2D" parent="Laser"]
 position = Vector2(172, 491)
