@@ -47,8 +47,9 @@ position = Vector2(162, 140)
 [node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
 position = Vector2(115, 301)
 
-[node name="Baby" parent="." instance=ExtResource("3_n3qp0")]
+[node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(310, 315)
+player = NodePath("../FatCat")
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(185, 261)

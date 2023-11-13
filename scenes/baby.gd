@@ -1,41 +1,23 @@
 extends CharacterBody2D
 
 var speed : int = 40
-var player : Node
-var relative_direction : Vector2
-var collision
-var chase : bool
 
 @export var animation_tree : Node
+@export var player : Node2D
+@onready var nav_agent : Node = $NavigationAgent2D
 
 func _ready() -> void:
 	animation_tree.active = true
 
-func _physics_process(delta) -> void:
-	player = get_parent().get_node("FatCat")
-	
-	# Get relative direction between player and enemy position.
-	# Normalize so length of vector is 1.
-	relative_direction = (player.position - position).normalized()
-	
-	collision = move_and_collide(velocity * delta)
+func _physics_process(_delta) -> void:
+	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	velocity = dir * speed
+	move_and_slide()
 	
 	play_move_animations()
 	
-	if collision:
-		# Allows enemy to slide on walls
-		velocity = velocity.slide(collision.get_normal())
-	
-	chase_player(player.position)
-
-func chase_player(player_position:Vector2) -> void:
-	# Sets chase condition if player is within range
-	if position.distance_to(player_position) < 100:
-		chase = true
-	
-	if chase:
-		# Sets velocity which changes based on relative direction
-		velocity = Vector2(relative_direction * speed)
+func make_path() -> void:
+	nav_agent.target_position = player.global_position
 
 func play_move_animations() -> void:
 	# If enemy not moving, travel to idle animation
@@ -45,5 +27,8 @@ func play_move_animations() -> void:
 		# If enemy moving, travel to walk animation
 		# Set blend positions (directions) of animations based on relative direction
 		animation_tree.get("parameters/playback").travel("Run")
-		animation_tree.set("parameters/Idle/blend_position", relative_direction)
-		animation_tree.set("parameters/Run/blend_position", relative_direction)
+		animation_tree.set("parameters/Idle/blend_position", velocity)
+		animation_tree.set("parameters/Run/blend_position", velocity)
+
+func _on_timer_timeout() -> void:
+	make_path()

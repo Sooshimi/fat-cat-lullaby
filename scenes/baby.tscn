@@ -346,6 +346,8 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 29
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_0363r")
 animation_tree = NodePath("AnimationTree")
 
@@ -363,6 +365,12 @@ occluder = SubResource("OccluderPolygon2D_nw1ta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_smyuq")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NewPathTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3yn75")
@@ -373,3 +381,5 @@ tree_root = SubResource("AnimationNodeStateMachine_l461e")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Run/blend_position = Vector2(0, 0)
+
+[connection signal="timeout" from="NewPathTimer" to="." method="_on_timer_timeout"]
