@@ -1,11 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=9 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
 [ext_resource type="PackedScene" uid="uid://krcrgk7ddf8" path="res://scenes/piano.tscn" id="2_qla7i"]
 [ext_resource type="PackedScene" uid="uid://du8n2u6bk366n" path="res://scenes/baby.tscn" id="3_n3qp0"]
 [ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="4_qx8n5"]
+[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="6_k6mst"]
 [ext_resource type="PackedScene" uid="uid://b3adqkmggnbq1" path="res://scenes/laser.tscn" id="6_usot1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
+shader = ExtResource("6_k6mst")
+shader_parameter/screen_width = 640.0
+shader_parameter/screen_height = 640.0
+shader_parameter/BarrelPower = 1.02
+shader_parameter/color_bleeding = 1.2
+shader_parameter/bleeding_range_x = 0.8
+shader_parameter/bleeding_range_y = 0.8
+shader_parameter/lines_distance = 5.0
+shader_parameter/scan_size = 2.0
+shader_parameter/scanline_alpha = 0.9
+shader_parameter/lines_velocity = 1.0
 
 [node name="Level1" type="Node"]
 
@@ -13,7 +27,7 @@
 color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
-position = Vector2(-11, 90)
+position = Vector2(-165, -137)
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
 position = Vector2(162, 140)
@@ -40,6 +54,23 @@ drag_left_margin = 0.3
 drag_top_margin = 0.3
 drag_right_margin = 0.3
 drag_bottom_margin = 0.3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="FatCat/Camera2D"]
+
+[node name="CRTScreen" type="ColorRect" parent="FatCat/Camera2D/CanvasLayer"]
+material = SubResource("ShaderMaterial_wxkst")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
 self_modulate = Color(1, 1, 1, 0.286275)
