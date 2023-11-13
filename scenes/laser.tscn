@@ -7,4 +7,5 @@ light_mode = 1
 
 [node name="Laser" type="Line2D"]
 material = SubResource("CanvasItemMaterial_bgm0k")
+round_precision = 4
 script = ExtResource("1_dwcdn")
