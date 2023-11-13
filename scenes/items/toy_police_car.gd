@@ -9,7 +9,7 @@ var key_e := load("res://audio/3E.ogg")
 
 var tune : Array = [key_e, key_d, key_c]
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	for key in tune:
 		note.stream = key
 		note.play()
