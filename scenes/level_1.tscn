@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=15 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
 [ext_resource type="PackedScene" uid="uid://kd8lrl2o8mac" path="res://scenes/fat_cat.tscn" id="1_tss6p"]
 [ext_resource type="PackedScene" uid="uid://krcrgk7ddf8" path="res://scenes/piano.tscn" id="2_qla7i"]
 [ext_resource type="PackedScene" uid="uid://du8n2u6bk366n" path="res://scenes/baby.tscn" id="3_n3qp0"]
@@ -8,6 +9,7 @@
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="6_k6mst"]
 [ext_resource type="PackedScene" uid="uid://b3adqkmggnbq1" path="res://scenes/laser.tscn" id="6_usot1"]
 [ext_resource type="PackedScene" uid="uid://co6vwrmogijxe" path="res://scenes/items/toy_police_car.tscn" id="8_cu1mq"]
+[ext_resource type="PackedScene" uid="uid://4sku6vb8audx" path="res://scenes/ui/pause_menu.tscn" id="9_ejdt2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -33,7 +35,9 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_g0v1n")
 noise = SubResource("FastNoiseLite_g8skw")
 
-[node name="Level1" type="Node"]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu")]
+script = ExtResource("1_ddu6q")
+pause_menu = NodePath("CanvasLayer/PauseMenu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
@@ -118,3 +122,9 @@ player = NodePath("../FatCat")
 
 [node name="LaserPosition" type="Marker2D" parent="Laser"]
 position = Vector2(174, 571)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ejdt2")]
+unique_name_in_owner = true

@@ -6,14 +6,6 @@ var win : bool = false
 var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
 
-func _ready():
-#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	pass
-
-func _unhandled_input(_event) -> void:
-	if Input.is_action_just_pressed("escape"):
-		get_tree().quit()
-
 func check_key_order() -> void:
 	# Check every key pressed by player
 	for i in keys_played.size():
