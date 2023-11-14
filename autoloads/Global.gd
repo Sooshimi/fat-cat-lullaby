@@ -10,7 +10,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _unhandled_input(_event) -> void:
-	if Input.is_action_pressed("escape"):
+	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
 
 func check_key_order() -> void:
