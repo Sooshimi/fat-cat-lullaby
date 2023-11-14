@@ -5,8 +5,8 @@ const SPEED_NORMAL : int = 40
 const SPEED_ANGRY : int = 60
 var speed : int = SPEED_NORMAL
 
-var emote_sleepy = load("res://assets/emotes/emote_sleeps.png")
-var emote_angry = load("res://assets/emotes/emote_anger.png")
+var emote_sleepy : Resource = load("res://assets/emotes/emote_sleeps.png")
+var emote_angry : Resource = load("res://assets/emotes/emote_anger.png")
 
 const SLEEPY_REACTION_TIME : Array = [1.0, 1.2]
 const NORMAL_REACTION_TIME : Array = [0.4, 0.6]
