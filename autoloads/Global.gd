@@ -7,7 +7,8 @@ var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass
 
 func _unhandled_input(_event) -> void:
 	if Input.is_action_just_pressed("escape"):
