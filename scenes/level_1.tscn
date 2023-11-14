@@ -66,6 +66,7 @@ energy = 0.8
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 2.0
+shadow_item_cull_mask = 3
 texture = ExtResource("4_qx8n5")
 texture_scale = 0.9
 
