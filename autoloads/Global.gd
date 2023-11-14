@@ -1,5 +1,7 @@
 extends Node
 
+var game_over : bool = false
+
 var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
 

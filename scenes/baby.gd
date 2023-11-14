@@ -30,6 +30,16 @@ func _physics_process(_delta) -> void:
 	velocity = dir * speed
 	move_and_slide()
 	
+	# Get collision info
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		# If baby collides with cat...
+		if "FatCat" in collision.get_collider().name:
+			# Set game over state
+			Global.game_over = true
+			# Stop baby from moving
+			nav_agent.navigation_layers = 0
+	
 	play_move_animations()
 	
 func make_path() -> void:
@@ -46,15 +56,21 @@ func play_move_animations() -> void:
 		animation_tree.set("parameters/Idle/blend_position", velocity)
 		animation_tree.set("parameters/Run/blend_position", velocity)
 
+# Randomise reaction time within a range based on what emotional response is 
+# triggered (sleepy, normal, angry).
 func set_reaction_time(current_reaction_time) -> void:
 	new_path_timer.wait_time = randf_range(current_reaction_time[0], current_reaction_time[1])
 
+# Update path to cat periodically, and randomise reaction time every new path.
 func _on_timer_timeout() -> void:
 	make_path()
 	set_reaction_time(current_reaction_time)
 
 func trigger_emote(expression:String) -> void:
+	# Trigger emote after emote cooldown
 	if emote_timer.is_stopped():
+		# Set baby speed and path finding reaction times based on response type
+		# from the collided toy
 		if expression == "sleepy":
 			current_reaction_time = SLEEPY_REACTION_TIME
 			speed = SPEED_SLEEPY
@@ -64,11 +80,13 @@ func trigger_emote(expression:String) -> void:
 			speed = SPEED_ANGRY
 			set_emote(emote_angry)
 
+# Changes and shows emote icon, and start emote cooldown timer
 func set_emote(emote_icon) -> void:
 	emote.texture = emote_icon
 	emote.show()
 	emote_timer.start()
 
+# Set baby's speed and reaction time back to normal after a short period
 func _on_emote_timer_timeout():
 	speed = SPEED_NORMAL
 	current_reaction_time = NORMAL_REACTION_TIME
