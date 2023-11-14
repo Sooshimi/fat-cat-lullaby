@@ -71,4 +71,5 @@ func set_emote(emote_icon) -> void:
 
 func _on_emote_timer_timeout():
 	speed = SPEED_NORMAL
+	current_reaction_time = NORMAL_REACTION_TIME
 	emote.hide()
