@@ -46,10 +46,11 @@ position = Vector2(162, 140)
 
 [node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
 position = Vector2(115, 301)
+baby_emotion_trigger = "angry"
 
-[node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(310, 315)
-player = NodePath("../FatCat")
+[node name="ToyPoliceCar2" parent="." instance=ExtResource("8_cu1mq")]
+position = Vector2(116, 231)
+baby_emotion_trigger = "sleepy"
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(185, 261)
@@ -94,6 +95,10 @@ offset_right = 512.0
 offset_bottom = 512.0
 texture = SubResource("NoiseTexture2D_qk3ee")
 stretch_mode = 2
+
+[node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
+position = Vector2(310, 315)
+player = NodePath("../FatCat")
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
 
