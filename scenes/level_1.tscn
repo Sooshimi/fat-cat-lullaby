@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=17 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://co6vwrmogijxe" path="res://scenes/items/toy_police_car.tscn" id="8_cu1mq"]
 [ext_resource type="PackedScene" uid="uid://4sku6vb8audx" path="res://scenes/ui/pause_menu.tscn" id="9_ejdt2"]
 [ext_resource type="PackedScene" uid="uid://dufd5xc6bws0r" path="res://scenes/ui/game_over.tscn" id="11_64s1c"]
+[ext_resource type="PackedScene" uid="uid://brp00iynn3pio" path="res://scenes/ui/win_menu.tscn" id="12_c4k5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -36,10 +37,11 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_g0v1n")
 noise = SubResource("FastNoiseLite_g8skw")
 
-[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu")]
 script = ExtResource("1_ddu6q")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
 game_over_menu = NodePath("CanvasLayer/GameOver")
+win_menu = NodePath("CanvasLayer/WinMenu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
@@ -132,3 +134,5 @@ process_mode = 3
 unique_name_in_owner = true
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("11_64s1c")]
+
+[node name="WinMenu" parent="CanvasLayer" instance=ExtResource("12_c4k5a")]

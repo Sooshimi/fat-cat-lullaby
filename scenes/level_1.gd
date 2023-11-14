@@ -2,9 +2,14 @@ extends Node
 
 @export var pause_menu : Control
 @export var game_over_menu : Control
+@export var win_menu : Control
 
 func game_over():
 	game_over_menu.show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func win():
+	win_menu.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _unhandled_input(_event) -> void:

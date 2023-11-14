@@ -8,8 +8,8 @@ var is_grounded : bool = true
 var collision
 var start_roll_position : Vector2
 var start_jump_position : Vector2
-var max_roll_length : int = 60
-var max_jump_length : int = 50
+var max_roll_length : int = 70
+var max_jump_length : int = 60
 
 @onready var roll_cooldown : Node = $RollCooldown
 @onready var jump_window : Node = $JumpWindow
