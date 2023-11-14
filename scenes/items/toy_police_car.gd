@@ -2,14 +2,27 @@ extends RigidBody2D
 
 @onready var note : Node = $AudioStreamPlayer
 @onready var note_timer : Node = $NoteTimer
-@onready var baby = get_parent().get_node("Baby")
-@export var baby_emotion_trigger : String
+@onready var baby : CharacterBody2D = get_parent().get_node("Baby")
 
-var key_c := load("res://audio/3C.ogg")
-var key_d := load("res://audio/3D.ogg")
-var key_e := load("res://audio/3E.ogg")
+@export_enum("C", "D", "E") var key_1 : String
+@export_enum("C", "D", "E") var key_2 : String
+@export_enum("C", "D", "E") var key_3 : String
+var tune : Array
 
-var tune : Array = [key_e, key_d, key_c]
+@export_enum("sleepy", "normal", "angry") var baby_emotion_trigger : String
+
+func _ready() -> void:
+	load_keys()
+
+func load_keys() -> void:
+	var key_array : Array = [key_1, key_2, key_3]
+	var format_path_string : String = "res://audio/%s.ogg"
+	
+	for i in key_array.size():
+		var key : String = key_array[i]
+		var key_string : String = format_path_string % key
+		var load_key : Resource = load(key_string)
+		tune.append(load_key)
 
 func _on_area_2d_body_entered(_body) -> void:
 	baby.trigger_emote(baby_emotion_trigger)

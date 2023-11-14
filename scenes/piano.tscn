@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
 [ext_resource type="Texture2D" uid="uid://cf5ei57s2p264" path="res://assets/items/Piano1.png" id="2_3xi4p"]
-[ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/3C.ogg" id="2_56j7u"]
-[ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/3D.ogg" id="4_gb6kq"]
-[ext_resource type="AudioStream" uid="uid://cepitx82ektma" path="res://audio/3E.ogg" id="5_iyi8y"]
+[ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/C.ogg" id="3_hkqyd"]
+[ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/D.ogg" id="4_j3b6a"]
+[ext_resource type="AudioStream" uid="uid://cepitx82ektma" path="res://audio/E.ogg" id="5_vq4qx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
 size = Vector2(3, 7.75)
@@ -35,7 +35,7 @@ position = Vector2(-17.75, 7.625)
 shape = SubResource("RectangleShape2D_pj875")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyCArea"]
-stream = ExtResource("2_56j7u")
+stream = ExtResource("3_hkqyd")
 
 [node name="KeyDArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -47,7 +47,7 @@ position = Vector2(-12.75, 7.625)
 shape = SubResource("RectangleShape2D_ep7j2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyDArea"]
-stream = ExtResource("4_gb6kq")
+stream = ExtResource("4_j3b6a")
 
 [node name="KeyEArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -59,7 +59,7 @@ position = Vector2(-7.75, 7.625)
 shape = SubResource("RectangleShape2D_l27jq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyEArea"]
-stream = ExtResource("5_iyi8y")
+stream = ExtResource("5_vq4qx")
 
 [connection signal="body_entered" from="KeyCArea" to="." method="_on_key_c_area_body_entered"]
 [connection signal="body_entered" from="KeyDArea" to="." method="_on_key_d_area_body_entered"]
