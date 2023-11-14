@@ -353,6 +353,7 @@ animation_tree = NodePath("AnimationTree")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
 texture = ExtResource("2_3fbd1")
 hframes = 6
 vframes = 10

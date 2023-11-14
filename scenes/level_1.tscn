@@ -45,25 +45,33 @@ position = Vector2(-165, -137)
 position = Vector2(162, 140)
 
 [node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
-position = Vector2(115, 301)
+position = Vector2(144, 329)
 key_1 = "D"
 key_2 = "C"
 key_3 = "E"
 baby_emotion_trigger = "angry"
 
 [node name="ToyPoliceCar2" parent="." instance=ExtResource("8_cu1mq")]
-position = Vector2(116, 231)
+position = Vector2(82, 245)
 key_1 = "E"
 key_2 = "D"
 key_3 = "C"
 baby_emotion_trigger = "sleepy"
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
-position = Vector2(185, 261)
+position = Vector2(182, 259)
 
-[node name="PointLight2D" type="PointLight2D" parent="FatCat"]
+[node name="PlayerLight" type="PointLight2D" parent="FatCat"]
 energy = 0.8
 shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 2.0
+texture = ExtResource("4_qx8n5")
+texture_scale = 0.9
+
+[node name="ShadowLight" type="PointLight2D" parent="FatCat"]
+energy = 0.8
+range_item_cull_mask = 2
 shadow_filter = 1
 shadow_filter_smooth = 2.0
 texture = ExtResource("4_qx8n5")
@@ -103,7 +111,7 @@ texture = SubResource("NoiseTexture2D_qk3ee")
 stretch_mode = 2
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(310, 315)
+position = Vector2(334, 300)
 player = NodePath("../FatCat")
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
