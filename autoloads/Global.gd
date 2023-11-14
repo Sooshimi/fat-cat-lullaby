@@ -1,6 +1,7 @@
 extends Node
 
 var game_over : bool = false
+var win : bool = false
 
 var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
@@ -25,4 +26,5 @@ func check_key_order() -> void:
 	# Correct if entire played array matches the order of notes in the lullaby
 	if keys_played == lullaby:
 		print("Correct order!")
+		win = true
 		keys_played = []

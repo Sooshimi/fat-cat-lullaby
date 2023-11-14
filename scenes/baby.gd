@@ -26,21 +26,22 @@ func _ready() -> void:
 	emote.hide()
 
 func _physics_process(_delta) -> void:
-	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
-	move_and_slide()
-	
-	# Get collision info
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		# If baby collides with cat...
-		if "FatCat" in collision.get_collider().name:
-			# Set game over state
-			Global.game_over = true
-			# Stop baby from moving
-			nav_agent.navigation_layers = 0
-	
-	play_move_animations()
+	if !Global.win:
+		var dir = to_local(nav_agent.get_next_path_position()).normalized()
+		velocity = dir * speed
+		move_and_slide()
+		
+		# Get collision info
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			# If baby collides with cat...
+			if "FatCat" in collision.get_collider().name:
+				# Set game over state
+				Global.game_over = true
+				# Stop baby from moving
+				nav_agent.navigation_layers = 0
+		
+		play_move_animations()
 	
 func make_path() -> void:
 	nav_agent.target_position = player.global_position
