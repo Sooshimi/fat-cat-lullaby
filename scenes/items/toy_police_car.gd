@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func load_keys() -> void:
 	var key_array : Array = [key_1, key_2, key_3]
-	var format_path_string : String = "res://audio/%s.ogg"
+	var format_path_string : String = "res://audio/keys/%s.ogg"
 	
 	for i in key_array.size():
 		var key : String = key_array[i]
