@@ -36,8 +36,6 @@ func _physics_process(_delta) -> void:
 			var collision = get_slide_collision(i)
 			# If baby collides with cat...
 			if "FatCat" in collision.get_collider().name:
-				# Set game over state
-				Global.game_over = true
 				# Stop baby from moving
 				nav_agent.navigation_layers = 0
 		

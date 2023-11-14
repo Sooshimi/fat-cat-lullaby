@@ -73,3 +73,6 @@ func _physics_process(delta) -> void:
 			is_grounded = true
 			# Allows player to slide on walls
 			velocity = velocity.slide(collision.get_normal())
+			
+			if "Baby" in collision.get_collider().name:
+				Global.game_over = true
