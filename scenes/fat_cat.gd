@@ -15,9 +15,12 @@ var max_jump_length : int = 50
 @onready var jump_window : Node = $JumpWindow
 @onready var collision_shape : Node = $CollisionShape2D
 
+signal signal_game_over
+
 func _ready() -> void:
 	# Stop cat moving at first launch of game
 	target = global_position
+	signal_game_over.connect(get_parent().game_over)
 
 func _physics_process(delta) -> void:
 	if !Global.game_over && !Global.win:
@@ -76,3 +79,4 @@ func _physics_process(delta) -> void:
 			
 			if "Baby" in collision.get_collider().name:
 				Global.game_over = true
+				signal_game_over.emit()

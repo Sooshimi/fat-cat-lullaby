@@ -36,9 +36,10 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_g0v1n")
 noise = SubResource("FastNoiseLite_g8skw")
 
-[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu")]
 script = ExtResource("1_ddu6q")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
+game_over_menu = NodePath("CanvasLayer/GameOver")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
