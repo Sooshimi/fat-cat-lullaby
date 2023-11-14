@@ -365,6 +365,7 @@ position = Vector2(0, -1)
 occluder = SubResource("OccluderPolygon2D_nw1ta")
 
 [node name="Emote" type="Sprite2D" parent="."]
+light_mask = 2
 position = Vector2(2.08165e-12, -15.63)
 scale = Vector2(0.5, 0.5)
 
