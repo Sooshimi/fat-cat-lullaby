@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://du8n2u6bk366n"]
+[gd_scene load_steps=30 format=3 uid="uid://du8n2u6bk366n"]
 
 [ext_resource type="Script" path="res://scenes/baby.gd" id="1_0363r"]
 [ext_resource type="Texture2D" uid="uid://bf8arr2oqkhox" path="res://assets/characters/baby_walk_4_direction.png" id="2_3fbd1"]
+[ext_resource type="AudioStream" uid="uid://p7fh86754sa6" path="res://audio/sfx/footstep_grass_000.ogg" id="3_4bw4a"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nw1ta"]
 cull_mode = 1
@@ -383,6 +384,10 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 
+[node name="FootstepsTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3yn75")
@@ -393,6 +398,13 @@ tree_root = SubResource("AnimationNodeStateMachine_l461e")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
 parameters/Run/blend_position = Vector2(0, 0)
+
+[node name="BabyFootsteps" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("3_4bw4a")
+volume_db = -10.0
+max_distance = 200.0
+attenuation = 1.51572
 
 [connection signal="timeout" from="NewPathTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EmoteTimer" to="." method="_on_emote_timer_timeout"]

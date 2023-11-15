@@ -16,6 +16,8 @@ var current_reaction_time : Array = NORMAL_REACTION_TIME
 var collision
 @export var animation_tree : Node
 @export var player : Node2D
+@onready var footsteps_sound : AudioStreamPlayer2D = $BabyFootsteps
+@onready var footsteps_timer : Timer = $FootstepsTimer
 @onready var emote : Node2D = $Emote
 @onready var emote_timer : Node = $EmoteTimer
 @onready var nav_agent : Node = $NavigationAgent2D
@@ -40,7 +42,7 @@ func _physics_process(_delta) -> void:
 				nav_agent.navigation_layers = 0
 		
 		play_move_animations()
-	
+
 func make_path() -> void:
 	nav_agent.target_position = player.global_position
 
@@ -54,6 +56,11 @@ func play_move_animations() -> void:
 		animation_tree.get("parameters/playback").travel("Run")
 		animation_tree.set("parameters/Idle/blend_position", velocity)
 		animation_tree.set("parameters/Run/blend_position", velocity)
+		
+		if footsteps_timer.is_stopped():
+			footsteps_sound.pitch_scale = randf_range(0.8, 1.2)
+			footsteps_sound.play()
+			footsteps_timer.start()
 
 # Randomise reaction time within a range based on what emotional response is 
 # triggered (sleepy, normal, angry).
