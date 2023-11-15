@@ -41,7 +41,7 @@ offset_right = 360.0
 offset_bottom = 360.0
 script = ExtResource("1_xofwq")
 play_button = NodePath("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play")
-quit_button = NodePath("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit")
+quit_button = NodePath("MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit")
 button_click_sound = NodePath("ButtonClickSound")
 button_hover_sound = NodePath("ButtonHoverSound")
 fade_out_timer = NodePath("FadeOutTimer")
@@ -102,7 +102,16 @@ text = "Play"
 custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("2_rph22")
+text = "Credits"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(70, 30)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 theme = ExtResource("2_rph22")
 text = "Quit"
@@ -153,5 +162,5 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit" to="." method="_on_quit_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
