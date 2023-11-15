@@ -33,5 +33,11 @@ func _on_quit_pressed() -> void:
 func _on_play_mouse_entered():
 	button_hover_sound.play()
 
+func _on_credits_pressed():
+	button_click_sound.play()
+
+func _on_credits_mouse_entered():
+	button_hover_sound.play()
+
 func _on_quit_mouse_entered():
 	button_hover_sound.play()
