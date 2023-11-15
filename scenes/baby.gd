@@ -18,6 +18,7 @@ var collision
 @export var player : Node2D
 @onready var footsteps_sound : AudioStreamPlayer2D = $BabyFootsteps
 @onready var footsteps_timer : Timer = $FootstepsTimer
+@onready var footsteps_vol : float = footsteps_sound.volume_db
 @onready var emote : Node2D = $Emote
 @onready var emote_timer : Node = $EmoteTimer
 @onready var nav_agent : Node = $NavigationAgent2D
@@ -58,7 +59,8 @@ func play_move_animations() -> void:
 		animation_tree.set("parameters/Run/blend_position", velocity)
 		
 		if footsteps_timer.is_stopped():
-			footsteps_sound.pitch_scale = randf_range(0.8, 1.2)
+			footsteps_sound.pitch_scale = randf_range(0.9, 1.1)
+			footsteps_sound.volume_db = randf_range(footsteps_vol-2.0, footsteps_vol+2.0)
 			footsteps_sound.play()
 			footsteps_timer.start()
 
