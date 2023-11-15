@@ -26,16 +26,16 @@ shader_parameter/scan_size = 2.0
 shader_parameter/scanline_alpha = 0.9
 shader_parameter/lines_velocity = 1.0
 
-[sub_resource type="Gradient" id="Gradient_g0v1n"]
+[sub_resource type="Gradient" id="Gradient_qnfct"]
 offsets = PackedFloat32Array(0, 0.770968, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.848387, 0.848387, 0.848387, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_g8skw"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ahm4g"]
 frequency = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qk3ee"]
-color_ramp = SubResource("Gradient_g0v1n")
-noise = SubResource("FastNoiseLite_g8skw")
+color_ramp = SubResource("Gradient_qnfct")
+noise = SubResource("FastNoiseLite_ahm4g")
 
 [node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu")]
 script = ExtResource("1_ddu6q")
@@ -110,6 +110,7 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Grain" type="TextureRect" parent="FatCat/Camera2D/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.0313726)
@@ -117,6 +118,7 @@ offset_right = 512.0
 offset_bottom = 512.0
 texture = SubResource("NoiseTexture2D_qk3ee")
 stretch_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(334, 300)
