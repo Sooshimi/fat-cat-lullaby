@@ -3,8 +3,10 @@ extends Node
 @export var pause_menu : Control
 @export var game_over_menu : Control
 @export var win_menu : Control
+@export var game_over_meow : AudioStreamPlayer
 
 func game_over():
+	game_over_meow.play()
 	game_over_menu.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
