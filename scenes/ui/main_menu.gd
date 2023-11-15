@@ -9,7 +9,7 @@ var play_pressed : bool = false
 
 func _process(delta):
 	if play_pressed:
-		canvas.color = lerp(canvas.color, Color(0,0,0,1), 3 * delta)
+		canvas.color = lerp(canvas.color, Color(0,0,0,1), 4 * delta)
 		music.volume_db = lerp(music.volume_db, -80.0, 1 * delta)
 
 func _on_play_pressed() -> void:
