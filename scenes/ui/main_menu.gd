@@ -9,8 +9,8 @@ var play_pressed : bool = false
 
 func _process(delta):
 	if play_pressed:
-		canvas.color = lerp(canvas.color, Color(0,0,0,1), 0.03)
-		music.volume_db = lerp(music.volume_db, -80.0, 0.01)
+		canvas.color = lerp(canvas.color, Color(0,0,0,1), 3 * delta)
+		music.volume_db = lerp(music.volume_db, -80.0, 1 * delta)
 
 func _on_play_pressed() -> void:
 	fade_out_timer.start()
