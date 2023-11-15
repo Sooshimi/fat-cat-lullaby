@@ -24,11 +24,14 @@ var collision
 @onready var nav_agent : Node = $NavigationAgent2D
 @onready var new_path_timer : Node = $NewPathTimer
 
+signal signal_game_over
+
 func _ready() -> void:
 	animation_tree.active = true
 	emote.hide()
+	signal_game_over.connect(get_parent().game_over)
 
-func _physics_process(_delta) -> void:
+func _physics_process(delta) -> void:
 	if !Global.win:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = dir * speed
@@ -40,6 +43,7 @@ func _physics_process(_delta) -> void:
 			# If baby collides with cat...
 			if "FatCat" in collision.get_collider().name:
 				# Stop baby from moving
+				signal_game_over.emit()
 				nav_agent.navigation_layers = 0
 		
 		play_move_animations()

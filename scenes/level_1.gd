@@ -4,11 +4,17 @@ extends Node
 @export var game_over_menu : Control
 @export var win_menu : Control
 @export var game_over_meow : AudioStreamPlayer
+@export var game_over_laugh : AudioStreamPlayer
+
+var run_once_counter : int = 0
 
 func game_over():
-	game_over_meow.play()
-	game_over_menu.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	run_once_counter += 1
+	if run_once_counter == 1:
+		game_over_meow.play()
+		game_over_laugh.play()
+		game_over_menu.show()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func win():
 	win_menu.show()

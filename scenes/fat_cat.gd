@@ -78,5 +78,4 @@ func _physics_process(delta) -> void:
 			velocity = velocity.slide(collision.get_normal())
 			
 			if "Baby" in collision.get_collider().name:
-				Global.game_over = true
 				signal_game_over.emit()

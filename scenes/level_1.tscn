@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=19 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dufd5xc6bws0r" path="res://scenes/ui/game_over.tscn" id="11_64s1c"]
 [ext_resource type="PackedScene" uid="uid://brp00iynn3pio" path="res://scenes/ui/win_menu.tscn" id="12_c4k5a"]
 [ext_resource type="AudioStream" uid="uid://b7gbp3qm8mwxm" path="res://audio/sfx/cat2.wav" id="13_lpnpe"]
+[ext_resource type="AudioStream" uid="uid://cxhcv48km8c4r" path="res://audio/sfx/baby-laugh.wav" id="14_bshae"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -38,12 +39,13 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_qnfct")
 noise = SubResource("FastNoiseLite_ahm4g")
 
-[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow", "game_over_laugh")]
 script = ExtResource("1_ddu6q")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
 game_over_menu = NodePath("CanvasLayer/GameOver")
 win_menu = NodePath("CanvasLayer/WinMenu")
 game_over_meow = NodePath("GameOverMeow")
+game_over_laugh = NodePath("GameOverLaugh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
@@ -143,4 +145,8 @@ unique_name_in_owner = true
 
 [node name="GameOverMeow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_lpnpe")
+volume_db = -15.0
+
+[node name="GameOverLaugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_bshae")
 volume_db = -5.0
