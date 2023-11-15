@@ -7,7 +7,7 @@ var current_scene
 var keys_played : Array = []
 var lullaby : Array = ["e", "d", "c"]
 
-signal signal_game_over
+signal signal_win
 
 func _ready() -> void:
 	pass
@@ -30,6 +30,6 @@ func check_key_order() -> void:
 	# Correct if entire played array matches the order of notes in the lullaby
 	if keys_played == lullaby:
 		win = true
-		signal_game_over.connect(get_scene().win)
-		signal_game_over.emit()
+		signal_win.connect(get_scene().win)
+		signal_win.emit()
 		keys_played = []
