@@ -1,6 +1,9 @@
 extends Control
 
 @export var play_button : Button
+@export var quit_button : Button
+@export var button_click_sound : AudioStreamPlayer
+@export var button_hover_sound : AudioStreamPlayer
 @export var fade_out_timer : Timer
 @export var canvas : CanvasModulate
 @export var music : AudioStreamPlayer
@@ -13,6 +16,7 @@ func _process(delta):
 		music.volume_db = lerp(music.volume_db, -80.0, 1 * delta)
 
 func _on_play_pressed() -> void:
+	button_click_sound.play()
 	fade_out_timer.start()
 	play_pressed = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -25,3 +29,9 @@ func _on_play_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_play_mouse_entered():
+	button_hover_sound.play()
+
+func _on_quit_mouse_entered():
+	button_hover_sound.play()
