@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=21 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://brp00iynn3pio" path="res://scenes/ui/win_menu.tscn" id="12_c4k5a"]
 [ext_resource type="AudioStream" uid="uid://b7gbp3qm8mwxm" path="res://audio/sfx/cat2.wav" id="13_lpnpe"]
 [ext_resource type="AudioStream" uid="uid://cxhcv48km8c4r" path="res://audio/sfx/baby-laugh.wav" id="14_bshae"]
+[ext_resource type="PackedScene" uid="uid://dunrjrrpt7r4f" path="res://scenes/items/furniture/chair.tscn" id="16_2aotx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -49,7 +50,6 @@ game_over_meow = NodePath("GameOverMeow")
 game_over_laugh = NodePath("GameOverLaugh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
@@ -127,11 +127,8 @@ stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(297, 284)
+position = Vector2(287, 332)
 player = NodePath("../FatCat")
-
-[node name="Table" parent="." instance=ExtResource("9_b8lmj")]
-position = Vector2(169, 431)
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
 
@@ -140,7 +137,6 @@ position = Vector2(174, 571)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ejdt2")]
 unique_name_in_owner = true
@@ -156,3 +152,15 @@ volume_db = -15.0
 [node name="GameOverLaugh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_bshae")
 volume_db = -5.0
+
+[node name="Table" parent="." instance=ExtResource("9_b8lmj")]
+position = Vector2(169, 431)
+
+[node name="Chair" parent="." instance=ExtResource("16_2aotx")]
+position = Vector2(239, 433)
+
+[node name="Chair2" parent="." instance=ExtResource("16_2aotx")]
+position = Vector2(116, 368)
+
+[node name="Chair3" parent="." instance=ExtResource("16_2aotx")]
+position = Vector2(123, 479)
