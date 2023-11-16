@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmfru4qj25m7"]
+
+[ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_iqsus"]
+
+[node name="Window" type="Sprite2D"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_iqsus")
+region_enabled = true
+region_rect = Rect2(622, 250, 40, 38)
