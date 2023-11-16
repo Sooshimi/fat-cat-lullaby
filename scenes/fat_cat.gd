@@ -5,6 +5,7 @@ var target : Vector2
 var is_rolling : bool
 var is_jumping : bool
 var is_grounded : bool = true
+var allow_jump : bool
 var collision
 var start_roll_position : Vector2
 var start_jump_position : Vector2
@@ -44,6 +45,7 @@ func _physics_process(delta) -> void:
 			start_roll_position = global_position
 			target = get_global_mouse_position()
 			is_rolling = true
+			allow_jump = true
 		else:
 			# Limit roll length, to distance of mouse click, or max roll length
 			if ((global_position.distance_to(target) < 5) ||\
@@ -88,7 +90,10 @@ func _physics_process(delta) -> void:
 			velocity = velocity.move_toward(Vector2.ZERO, 8)
 			
 			# Allow one jump during this window
-			if Input.is_action_just_pressed("jump") && !jump_window.is_stopped() && is_grounded:
+			if Input.is_action_just_pressed("jump") &&\
+				!jump_window.is_stopped() &&\
+				is_grounded &&\
+				allow_jump:
 				# JUMPING
 				animation_tree["parameters/conditions/jump"] = true
 				animation_tree["parameters/conditions/land"] = false
@@ -98,6 +103,7 @@ func _physics_process(delta) -> void:
 				is_grounded = false
 				is_rolling = true
 				is_jumping = true
+				allow_jump = false
 				
 				start_jump_position = global_position
 				# Sets mouse position as the jumping target
