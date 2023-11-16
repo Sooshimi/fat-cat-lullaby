@@ -25,7 +25,7 @@ func load_keys() -> void:
 		tune.append(load_key)
 
 func _on_area_2d_body_entered(_body) -> void:
-	baby.trigger_emote(baby_emotion_trigger)
+	baby.trigger_emote(baby_emotion_trigger) 
 	
 	for key in tune:
 		note.stream = key

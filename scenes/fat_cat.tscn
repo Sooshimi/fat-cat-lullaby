@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://kd8lrl2o8mac"]
+[gd_scene load_steps=59 format=3 uid="uid://kd8lrl2o8mac"]
 
 [ext_resource type="Script" path="res://scenes/fat_cat.gd" id="1_2mb82"]
 [ext_resource type="Texture2D" uid="uid://bcyu7dvy76sts" path="res://assets/characters/fat_cat_S.png" id="2_epg33"]
@@ -97,6 +97,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_8wlt1"]
 resource_name = "slide_down"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -140,6 +141,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_bug5p"]
 resource_name = "slide_to_idle_down"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -155,6 +157,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mmp64"]
 resource_name = "slide_to_roll_down"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -179,6 +182,230 @@ _data = {
 "slide_to_idle_down": SubResource("Animation_bug5p"),
 "slide_to_roll_down": SubResource("Animation_mmp64")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1dbny"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3ddjd"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cqnyq"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qld6v"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_a5cqo"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1dbny")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_3ddjd")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_cqnyq")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_qld6v")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3dp86"]
+animation = &"idle_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rfe3q"]
+animation = &"idle_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3i7g7"]
+animation = &"idle_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cjuh1"]
+animation = &"idle_to_roll_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_l3opj"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3dp86")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_rfe3q")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_3i7g7")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_cjuh1")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rajgx"]
+animation = &"jump_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l16n3"]
+animation = &"jump_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mc32"]
+animation = &"jump_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_712ga"]
+animation = &"jump_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_01d5m"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_rajgx")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_l16n3")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_7mc32")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_712ga")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_coio1"]
+animation = &"roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ihlb3"]
+animation = &"roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_64mdl"]
+animation = &"roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7rh55"]
+animation = &"roll_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sagk1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_coio1")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ihlb3")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_64mdl")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_7rh55")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lal8d"]
+animation = &"slide_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_enpq2"]
+animation = &"slide_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu5v3"]
+animation = &"slide_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7xrw4"]
+animation = &"slide_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ybt7e"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_lal8d")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_enpq2")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_pu5v3")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_7xrw4")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_68iha"]
+animation = &"slide_to_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hn3cq"]
+animation = &"slide_to_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_llpih"]
+animation = &"slide_to_idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_khkba"]
+animation = &"slide_to_idle_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_omsgh"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_68iha")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_hn3cq")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_llpih")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_khkba")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysxdb"]
+animation = &"slide_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ickcu"]
+animation = &"slide_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yjhej"]
+animation = &"slide_to_roll_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_esklk"]
+animation = &"slide_to_roll_down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xk1fm"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ysxdb")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ickcu")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_yjhej")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_esklk")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_50a8p"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iurry"]
+advance_mode = 2
+advance_condition = &"land"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ecyaf"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nbhtb"]
+advance_mode = 2
+advance_condition = &"idle_to_roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_13rdm"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle_to_roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y3xrg"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"slide_to_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nkcp"]
+advance_mode = 2
+advance_condition = &"slide_to_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c8i8e"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"slide_to_roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ibfmv"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"slide_to_roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmk2m"]
+advance_mode = 2
+advance_condition = &"roll_to_slide"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bsmcc"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_a5cqo")
+states/Idle/position = Vector2(233.025, 169.829)
+states/Idle_to_roll/node = SubResource("AnimationNodeBlendSpace2D_l3opj")
+states/Idle_to_roll/position = Vector2(232.15, 297.868)
+states/Jump/node = SubResource("AnimationNodeBlendSpace2D_01d5m")
+states/Jump/position = Vector2(575.838, 43.635)
+states/Roll/node = SubResource("AnimationNodeBlendSpace2D_sagk1")
+states/Roll/position = Vector2(417.4, 298.276)
+states/Slide/node = SubResource("AnimationNodeBlendSpace2D_ybt7e")
+states/Slide/position = Vector2(576.65, 169.552)
+states/Slide_to_idle/node = SubResource("AnimationNodeBlendSpace2D_omsgh")
+states/Slide_to_idle/position = Vector2(400.9, 171.511)
+states/Slide_to_roll/node = SubResource("AnimationNodeBlendSpace2D_xk1fm")
+states/Slide_to_roll/position = Vector2(579.463, 298.685)
+states/Start/position = Vector2(102, 169.5)
+transitions = ["Slide", "Jump", SubResource("AnimationNodeStateMachineTransition_50a8p"), "Jump", "Slide", SubResource("AnimationNodeStateMachineTransition_iurry"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ecyaf"), "Idle", "Idle_to_roll", SubResource("AnimationNodeStateMachineTransition_nbhtb"), "Idle_to_roll", "Roll", SubResource("AnimationNodeStateMachineTransition_13rdm"), "Slide", "Slide_to_idle", SubResource("AnimationNodeStateMachineTransition_y3xrg"), "Slide_to_idle", "Idle", SubResource("AnimationNodeStateMachineTransition_5nkcp"), "Slide", "Slide_to_roll", SubResource("AnimationNodeStateMachineTransition_c8i8e"), "Slide_to_roll", "Roll", SubResource("AnimationNodeStateMachineTransition_ibfmv"), "Roll", "Slide", SubResource("AnimationNodeStateMachineTransition_mmk2m")]
+graph_offset = Vector2(-64.2, 115.44)
 
 [node name="FatCat" type="CharacterBody2D"]
 collision_mask = 30
@@ -210,3 +437,21 @@ current = true
 libraries = {
 "": SubResource("AnimationLibrary_dplhr")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_bsmcc")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/idle_to_roll = false
+parameters/conditions/jump = false
+parameters/conditions/land = false
+parameters/conditions/roll_to_slide = false
+parameters/conditions/slide_to_idle = false
+parameters/conditions/slide_to_roll = false
+parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
+parameters/Idle_to_roll/blend_position = Vector2(0, 0)
+parameters/Jump/blend_position = Vector2(0, 0)
+parameters/Roll/blend_position = Vector2(2.08165e-12, 2.08165e-12)
+parameters/Slide/blend_position = Vector2(0, 0)
+parameters/Slide_to_idle/blend_position = Vector2(0, 0)
+parameters/Slide_to_roll/blend_position = Vector2(0, 0)

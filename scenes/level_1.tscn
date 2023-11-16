@@ -125,7 +125,7 @@ stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(334, 300)
+position = Vector2(297, 284)
 player = NodePath("../FatCat")
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
