@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=33 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -16,6 +16,18 @@
 [ext_resource type="AudioStream" uid="uid://b7gbp3qm8mwxm" path="res://audio/sfx/cat2.wav" id="13_lpnpe"]
 [ext_resource type="AudioStream" uid="uid://cxhcv48km8c4r" path="res://audio/sfx/baby-laugh.wav" id="14_bshae"]
 [ext_resource type="PackedScene" uid="uid://dunrjrrpt7r4f" path="res://scenes/items/furniture/chair.tscn" id="16_2aotx"]
+[ext_resource type="PackedScene" uid="uid://d2lv3mf5yj2b2" path="res://scenes/items/furniture/bookshelf_tall.tscn" id="17_2is0m"]
+[ext_resource type="PackedScene" uid="uid://dxbakdlk40lej" path="res://scenes/items/furniture/bookshelf_short.tscn" id="18_j8yyq"]
+[ext_resource type="PackedScene" uid="uid://c7quonp4kgl4n" path="res://scenes/items/furniture/horse.tscn" id="19_dvn0x"]
+[ext_resource type="PackedScene" uid="uid://bbs3e114mheay" path="res://scenes/items/furniture/beach_ball.tscn" id="20_jcckc"]
+[ext_resource type="PackedScene" uid="uid://khey0kn2cdsn" path="res://scenes/items/furniture/empty_shelf.tscn" id="21_cp4qk"]
+[ext_resource type="PackedScene" uid="uid://stbt8u7l1e4w" path="res://scenes/items/furniture/wardrobe_tall.tscn" id="22_numcx"]
+[ext_resource type="PackedScene" uid="uid://yu61bci02qnb" path="res://scenes/items/furniture/tv.tscn" id="23_lgab1"]
+[ext_resource type="PackedScene" uid="uid://dtexwmu7kd14r" path="res://scenes/items/furniture/plant_1.tscn" id="24_hrias"]
+[ext_resource type="PackedScene" uid="uid://blb7ekyf7iyvm" path="res://scenes/items/furniture/plant_2.tscn" id="25_p56g8"]
+[ext_resource type="PackedScene" uid="uid://c1wa4cckurdji" path="res://scenes/items/furniture/pillow_orange.tscn" id="26_jaiyy"]
+[ext_resource type="PackedScene" uid="uid://1osb4d1q70vv" path="res://scenes/items/furniture/pillow_red.tscn" id="27_8iu11"]
+[ext_resource type="PackedScene" uid="uid://btvjpf7noghhc" path="res://scenes/items/furniture/pillow_yellow.tscn" id="28_63xr4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -126,6 +138,14 @@ texture = SubResource("NoiseTexture2D_qk3ee")
 stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Grain2" type="TextureRect" parent="FatCat/Camera2D/CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.0313726)
+offset_right = 512.0
+offset_bottom = 512.0
+texture = SubResource("NoiseTexture2D_qk3ee")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(287, 332)
 player = NodePath("../FatCat")
@@ -164,3 +184,42 @@ position = Vector2(116, 368)
 
 [node name="Chair3" parent="." instance=ExtResource("16_2aotx")]
 position = Vector2(123, 479)
+
+[node name="BookshelfTall" parent="." instance=ExtResource("17_2is0m")]
+position = Vector2(-114, -69)
+
+[node name="BookshelfShort" parent="." instance=ExtResource("18_j8yyq")]
+position = Vector2(-41, -52)
+
+[node name="Horse" parent="." instance=ExtResource("19_dvn0x")]
+position = Vector2(362, 34)
+
+[node name="BeachBall" parent="." instance=ExtResource("20_jcckc")]
+position = Vector2(11, -44)
+
+[node name="EmptyShelf" parent="." instance=ExtResource("21_cp4qk")]
+position = Vector2(51, -66)
+
+[node name="WardrobeTall" parent="." instance=ExtResource("22_numcx")]
+position = Vector2(381, -72)
+
+[node name="WardrobeTall2" parent="." instance=ExtResource("22_numcx")]
+position = Vector2(455, -72)
+
+[node name="TV" parent="." instance=ExtResource("23_lgab1")]
+position = Vector2(189, -65)
+
+[node name="Plant1" parent="." instance=ExtResource("24_hrias")]
+position = Vector2(508, -62)
+
+[node name="Plant2" parent="." instance=ExtResource("25_p56g8")]
+position = Vector2(231, -55)
+
+[node name="PillowOrange2" parent="." instance=ExtResource("26_jaiyy")]
+position = Vector2(441, 324)
+
+[node name="PillowRed" parent="." instance=ExtResource("27_8iu11")]
+position = Vector2(435, 341)
+
+[node name="PillowYellow" parent="." instance=ExtResource("28_63xr4")]
+position = Vector2(466, 375)

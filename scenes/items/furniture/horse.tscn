@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7quonp4kgl4n"]
+
+[ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_mecj3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
+radius = 5.33333
+height = 16.0
+
+[node name="Horse" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mecj3")
+region_enabled = true
+region_rect = Rect2(541, 423, 29, 25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1.33333)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_qvmu2")

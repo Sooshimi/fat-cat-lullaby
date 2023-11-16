@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://stbt8u7l1e4w"]
+
+[ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_85g4r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
+radius = 17.3333
+height = 43.3333
+
+[node name="WardrobeTall" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_85g4r")
+region_enabled = true
+region_rect = Rect2(64, 115, 35, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_qvmu2")
