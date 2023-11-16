@@ -126,7 +126,7 @@ position = Vector2(120, -93)
 position = Vector2(294, -93)
 
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
-position = Vector2(162, 140)
+position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
 position = Vector2(144, 329)

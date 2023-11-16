@@ -1,19 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://krcrgk7ddf8"]
+[gd_scene load_steps=8 format=3 uid="uid://krcrgk7ddf8"]
 
 [ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
-[ext_resource type="Texture2D" uid="uid://cf5ei57s2p264" path="res://assets/items/Piano1.png" id="2_3xi4p"]
-[ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/C.ogg" id="3_hkqyd"]
-[ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/D.ogg" id="4_j3b6a"]
-[ext_resource type="AudioStream" uid="uid://cepitx82ektma" path="res://audio/E.ogg" id="5_vq4qx"]
+[ext_resource type="Texture2D" uid="uid://b8jfaib7lme4g" path="res://assets/items/Piano_NO_COLOUR.png" id="2_6i507"]
+[ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/keys/C.ogg" id="3_hkqyd"]
+[ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/keys/D.ogg" id="4_j3b6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
-size = Vector2(3, 7.75)
+size = Vector2(8, 14.6875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep7j2"]
-size = Vector2(3, 7.75)
+size = Vector2(8, 8.04688)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l27jq"]
-size = Vector2(3, 7.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkl67"]
+size = Vector2(4.75, 9.5)
 
 [node name="Piano" type="Node2D"]
 position = Vector2(-1, 0)
@@ -22,45 +21,237 @@ script = ExtResource("1_w4nf5")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_3xi4p")
-hframes = 2
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_6i507")
 
-[node name="KeyCArea" type="Area2D" parent="."]
+[node name="B0" type="Area2D" parent="."]
+position = Vector2(-49, 12.75)
 collision_layer = 4
 collision_mask = 3
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyCArea"]
-position = Vector2(-17.75, 7.625)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B0"]
 shape = SubResource("RectangleShape2D_pj875")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyCArea"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="B0"]
 stream = ExtResource("3_hkqyd")
 
-[node name="KeyDArea" type="Area2D" parent="."]
+[node name="C1" type="Area2D" parent="."]
+position = Vector2(-39.25, 16.25)
 collision_layer = 4
 collision_mask = 3
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyDArea"]
-position = Vector2(-12.75, 7.625)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C1"]
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_ep7j2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyDArea"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="C1"]
 stream = ExtResource("4_j3b6a")
 
-[node name="KeyEArea" type="Area2D" parent="."]
+[node name="Cs1" type="Area2D" parent="."]
+position = Vector2(-34.5, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cs1"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cs1"]
+
+[node name="D1" type="Area2D" parent="."]
+position = Vector2(-29.25, 16.25)
 collision_layer = 4
 collision_mask = 3
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KeyEArea"]
-position = Vector2(-7.75, 7.625)
-shape = SubResource("RectangleShape2D_l27jq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KeyEArea"]
-stream = ExtResource("5_vq4qx")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="D1"]
+stream = ExtResource("4_j3b6a")
 
-[connection signal="body_entered" from="KeyCArea" to="." method="_on_key_c_area_body_entered"]
-[connection signal="body_entered" from="KeyDArea" to="." method="_on_key_d_area_body_entered"]
-[connection signal="body_entered" from="KeyEArea" to="." method="_on_key_e_area_body_entered"]
+[node name="Ds1" type="Area2D" parent="."]
+position = Vector2(-24.25, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ds1"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ds1"]
+
+[node name="E1" type="Area2D" parent="."]
+position = Vector2(-19.25, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="E1"]
+stream = ExtResource("4_j3b6a")
+
+[node name="F1" type="Area2D" parent="."]
+position = Vector2(-9.5, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="F1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="F1"]
+stream = ExtResource("4_j3b6a")
+
+[node name="Fs1" type="Area2D" parent="."]
+position = Vector2(-4.75, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fs1"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fs1"]
+
+[node name="G1" type="Area2D" parent="."]
+position = Vector2(0.5, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="G1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="G1"]
+stream = ExtResource("4_j3b6a")
+
+[node name="Gs1" type="Area2D" parent="."]
+position = Vector2(5, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gs1"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Gs1"]
+
+[node name="A1" type="Area2D" parent="."]
+position = Vector2(10.25, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="A1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="A1"]
+stream = ExtResource("4_j3b6a")
+
+[node name="As1" type="Area2D" parent="."]
+position = Vector2(15, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="As1"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="As1"]
+
+[node name="B1" type="Area2D" parent="."]
+position = Vector2(20.25, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="B1"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="B1"]
+stream = ExtResource("4_j3b6a")
+
+[node name="C2" type="Area2D" parent="."]
+position = Vector2(30.25, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="C2"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="C2"]
+stream = ExtResource("4_j3b6a")
+
+[node name="Cs2" type="Area2D" parent="."]
+position = Vector2(34.75, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cs2"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cs2"]
+
+[node name="D2" type="Area2D" parent="."]
+position = Vector2(40, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="D2"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="D2"]
+stream = ExtResource("4_j3b6a")
+
+[node name="Ds2" type="Area2D" parent="."]
+position = Vector2(45.25, 5)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ds2"]
+position = Vector2(0.125, 0.25)
+shape = SubResource("RectangleShape2D_dkl67")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ds2"]
+
+[node name="E2" type="Area2D" parent="."]
+position = Vector2(50, 16.25)
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="E2"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_ep7j2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="E2"]
+stream = ExtResource("4_j3b6a")
+
+[connection signal="body_entered" from="B0" to="." method="_on_key_c_area_body_entered"]
+[connection signal="body_entered" from="C1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="D1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="E1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="F1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="G1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="A1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="B1" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="C2" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="D2" to="." method="_on_key_d_area_body_entered"]
+[connection signal="body_entered" from="E2" to="." method="_on_key_d_area_body_entered"]
