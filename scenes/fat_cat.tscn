@@ -1,7 +1,8 @@
-[gd_scene load_steps=61 format=3 uid="uid://kd8lrl2o8mac"]
+[gd_scene load_steps=62 format=3 uid="uid://kd8lrl2o8mac"]
 
 [ext_resource type="Script" path="res://scenes/fat_cat.gd" id="1_2mb82"]
 [ext_resource type="Texture2D" uid="uid://bcyu7dvy76sts" path="res://assets/characters/fat_cat_S.png" id="2_epg33"]
+[ext_resource type="Texture2D" uid="uid://djv1wb2koet33" path="res://assets/spot_shadow.png" id="2_oe6q7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5d58g"]
 radius = 4.66667
@@ -396,6 +397,12 @@ graph_offset = Vector2(-12.2, 7.44)
 scale = Vector2(1.5, 1.5)
 collision_mask = 30
 script = ExtResource("1_2mb82")
+
+[node name="SpotShadow" type="Sprite2D" parent="."]
+self_modulate = Color(0.309804, 0.309804, 0.309804, 0.843137)
+position = Vector2(2.08165e-12, 4.387)
+scale = Vector2(0.78, 0.48)
+texture = ExtResource("2_oe6q7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_epg33")
