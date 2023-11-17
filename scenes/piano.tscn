@@ -1,25 +1,55 @@
-[gd_scene load_steps=24 format=3 uid="uid://krcrgk7ddf8"]
+[gd_scene load_steps=44 format=3 uid="uid://krcrgk7ddf8"]
 
 [ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
 [ext_resource type="Texture2D" uid="uid://b8jfaib7lme4g" path="res://assets/items/Piano_NO_COLOUR.png" id="2_6i507"]
 [ext_resource type="AudioStream" uid="uid://kma27y8f1xji" path="res://audio/keys/B0.ogg" id="3_1v7f0"]
 [ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/keys/C1.ogg" id="3_afh32"]
 [ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/keys/D1.ogg" id="4_7t2rq"]
+[ext_resource type="Texture2D" uid="uid://n8ykeloeyc5o" path="res://assets/items/coloured_notes/B0 purple.png" id="4_wtfhv"]
 [ext_resource type="AudioStream" uid="uid://cvo8ckidnhnmb" path="res://audio/keys/Cs1.ogg" id="5_73dr5"]
-[ext_resource type="AudioStream" uid="uid://d4m0bohv66pqf" path="res://audio/keys/Ds1.ogg" id="7_n81ht"]
+[ext_resource type="Texture2D" uid="uid://cfldksosier26" path="res://assets/items/coloured_notes/C1 red.png" id="6_axqq6"]
 [ext_resource type="AudioStream" uid="uid://cepitx82ektma" path="res://audio/keys/E1.ogg" id="8_fw0yr"]
+[ext_resource type="Texture2D" uid="uid://cb74g5mt35icw" path="res://assets/items/coloured_notes/C#1 pink.png" id="8_hnxgl"]
 [ext_resource type="AudioStream" uid="uid://cu708bigkicj2" path="res://audio/keys/F1.ogg" id="9_3gg8g"]
 [ext_resource type="AudioStream" uid="uid://cmon13r47uijw" path="res://audio/keys/Fs1.ogg" id="10_3dpe6"]
+[ext_resource type="Texture2D" uid="uid://bynpq7hueiuq" path="res://assets/items/coloured_notes/D1 Green.png" id="10_nhylu"]
 [ext_resource type="AudioStream" uid="uid://dat5xsk68xh0c" path="res://audio/keys/G1.ogg" id="11_54ra1"]
-[ext_resource type="AudioStream" uid="uid://bm3u48iji2p44" path="res://audio/keys/Gs1.ogg" id="12_w3ed3"]
+[ext_resource type="AudioStream" uid="uid://d4m0bohv66pqf" path="res://audio/keys/Eb1.ogg" id="11_xq2xc"]
+[ext_resource type="Texture2D" uid="uid://bha3konpgkfwy" path="res://assets/items/coloured_notes/Eb1 mauve.png" id="12_alcnt"]
 [ext_resource type="AudioStream" uid="uid://en0asce06jwr" path="res://audio/keys/A1.ogg" id="13_0cauc"]
-[ext_resource type="AudioStream" uid="uid://dffmwkucirkav" path="res://audio/keys/As1.ogg" id="14_idpbv"]
+[ext_resource type="Texture2D" uid="uid://ced3urhy5gskg" path="res://assets/items/coloured_notes/E1 lilac.png" id="14_27mwo"]
 [ext_resource type="AudioStream" uid="uid://ceo7sw2wyg1go" path="res://audio/keys/B1.ogg" id="15_ushhk"]
 [ext_resource type="AudioStream" uid="uid://bohma311ucggn" path="res://audio/keys/C2.ogg" id="16_0v2tv"]
+[ext_resource type="Texture2D" uid="uid://b7nyw3s8ii6n3" path="res://assets/items/coloured_notes/F1 lime.png" id="16_4oe6r"]
 [ext_resource type="AudioStream" uid="uid://b4fhxik66te6s" path="res://audio/keys/Cs2.ogg" id="17_s5h6k"]
 [ext_resource type="AudioStream" uid="uid://cywjkwobkdf5i" path="res://audio/keys/D2.ogg" id="18_jbrjl"]
-[ext_resource type="AudioStream" uid="uid://ck8rw7ispirod" path="res://audio/keys/Ds2.ogg" id="19_vmnps"]
+[ext_resource type="Texture2D" uid="uid://0ge5i36hlt6k" path="res://assets/items/coloured_notes/F#1 mint.png" id="18_sflfv"]
+[ext_resource type="Texture2D" uid="uid://n7om2ansvk53" path="res://assets/items/coloured_notes/G1 Orange.png" id="20_mluwr"]
 [ext_resource type="AudioStream" uid="uid://frsepu55woe7" path="res://audio/keys/E2.ogg" id="20_mna50"]
+[ext_resource type="AudioStream" uid="uid://bm3u48iji2p44" path="res://audio/keys/Ab1.ogg" id="21_3n8l4"]
+[ext_resource type="Texture2D" uid="uid://diua0u2h7415x" path="res://assets/items/coloured_notes/Ab1 Gold.png" id="22_fmadf"]
+[ext_resource type="Texture2D" uid="uid://ba5uw02vkdbas" path="res://assets/items/coloured_notes/A1 yellow.png" id="24_bghx2"]
+[ext_resource type="AudioStream" uid="uid://dffmwkucirkav" path="res://audio/keys/Bb1.ogg" id="25_6hp05"]
+[ext_resource type="Texture2D" uid="uid://dy625wdtocpas" path="res://assets/items/coloured_notes/Bb1 salmon.png" id="26_tjwi1"]
+[ext_resource type="Texture2D" uid="uid://c5atrnegs5s18" path="res://assets/items/coloured_notes/B1 purple.png" id="28_msgrn"]
+[ext_resource type="Texture2D" uid="uid://bghwa6xsoqd8y" path="res://assets/items/coloured_notes/C2 red.png" id="30_r7nmv"]
+[ext_resource type="Texture2D" uid="uid://dw2g51xlbrwn6" path="res://assets/items/coloured_notes/C#2 pink.png" id="32_kad1e"]
+[ext_resource type="Texture2D" uid="uid://cvrl8ig7i454w" path="res://assets/items/coloured_notes/D2 Green.png" id="34_i40y7"]
+[ext_resource type="AudioStream" uid="uid://ck8rw7ispirod" path="res://audio/keys/Eb2.ogg" id="35_nu7ox"]
+[ext_resource type="Texture2D" uid="uid://bdnbiqmggtywo" path="res://assets/items/coloured_notes/Eb2 mauve.png" id="36_2kufe"]
+[ext_resource type="Texture2D" uid="uid://kk6ngaq243mp" path="res://assets/items/coloured_notes/E2 lilac.png" id="38_p65ed"]
+
+[sub_resource type="Gradient" id="Gradient_g6rpn"]
+offsets = PackedFloat32Array(0.773987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jisnu"]
+gradient = SubResource("Gradient_g6rpn")
+width = 200
+height = 200
+fill = 2
+fill_from = Vector2(0.495726, 0.5)
+fill_to = Vector2(0.867521, 0.209402)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj875"]
 size = Vector2(8, 14.6875)
@@ -36,7 +66,7 @@ scale = Vector2(4, 4)
 script = ExtResource("1_w4nf5")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PianoSprite" type="Sprite2D" parent="."]
 position = Vector2(0.25, 0)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_6i507")
@@ -46,16 +76,36 @@ position = Vector2(-49, 12.75)
 collision_layer = 4
 metadata/_edit_group_ = true
 
+[node name="PointLight2D" type="PointLight2D" parent="B0"]
+visible = false
+position = Vector2(0, -2.5)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B0"]
 shape = SubResource("RectangleShape2D_pj875")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="B0"]
 stream = ExtResource("3_1v7f0")
 
+[node name="B0Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_wtfhv")
+
 [node name="C1" type="Area2D" parent="."]
 position = Vector2(-39.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="C1"]
+visible = false
+position = Vector2(0.25, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C1"]
 position = Vector2(0, -0.25)
@@ -64,10 +114,23 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="C1"]
 stream = ExtResource("3_afh32")
 
+[node name="C1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_axqq6")
+
 [node name="Cs1" type="Area2D" parent="."]
 position = Vector2(-34.5, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Cs1"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.05, 0.09)
+texture = SubResource("GradientTexture2D_jisnu")
+texture_scale = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cs1"]
 position = Vector2(0.125, 0.25)
@@ -76,10 +139,23 @@ shape = SubResource("RectangleShape2D_dkl67")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cs1"]
 stream = ExtResource("5_73dr5")
 
+[node name="Cs1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("8_hnxgl")
+
 [node name="D1" type="Area2D" parent="."]
 position = Vector2(-29.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="D1"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="D1"]
 position = Vector2(0, -0.25)
@@ -88,22 +164,48 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="D1"]
 stream = ExtResource("4_7t2rq")
 
-[node name="Ds1" type="Area2D" parent="."]
+[node name="D1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("10_nhylu")
+
+[node name="Eb1" type="Area2D" parent="."]
 position = Vector2(-24.25, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ds1"]
+[node name="PointLight2D" type="PointLight2D" parent="Eb1"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eb1"]
 position = Vector2(0.125, 0.25)
 shape = SubResource("RectangleShape2D_dkl67")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ds1"]
-stream = ExtResource("7_n81ht")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Eb1"]
+stream = ExtResource("11_xq2xc")
+
+[node name="Eb1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("12_alcnt")
 
 [node name="E1" type="Area2D" parent="."]
 position = Vector2(-19.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="E1"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="E1"]
 position = Vector2(0, -0.25)
@@ -112,10 +214,23 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="E1"]
 stream = ExtResource("8_fw0yr")
 
+[node name="E1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("14_27mwo")
+
 [node name="F1" type="Area2D" parent="."]
 position = Vector2(-9.5, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="F1"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="F1"]
 position = Vector2(0, -0.25)
@@ -124,10 +239,23 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="F1"]
 stream = ExtResource("9_3gg8g")
 
+[node name="F1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("16_4oe6r")
+
 [node name="Fs1" type="Area2D" parent="."]
 position = Vector2(-4.75, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Fs1"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fs1"]
 position = Vector2(0.125, 0.25)
@@ -136,10 +264,23 @@ shape = SubResource("RectangleShape2D_dkl67")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fs1"]
 stream = ExtResource("10_3dpe6")
 
+[node name="Fs1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("18_sflfv")
+
 [node name="G1" type="Area2D" parent="."]
 position = Vector2(0.5, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="G1"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="G1"]
 position = Vector2(0, -0.25)
@@ -148,22 +289,48 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="G1"]
 stream = ExtResource("11_54ra1")
 
-[node name="Gs1" type="Area2D" parent="."]
+[node name="G1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("20_mluwr")
+
+[node name="Ab1" type="Area2D" parent="."]
 position = Vector2(5, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gs1"]
+[node name="PointLight2D" type="PointLight2D" parent="Ab1"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ab1"]
 position = Vector2(0.125, 0.25)
 shape = SubResource("RectangleShape2D_dkl67")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Gs1"]
-stream = ExtResource("12_w3ed3")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ab1"]
+stream = ExtResource("21_3n8l4")
+
+[node name="Ab1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("22_fmadf")
 
 [node name="A1" type="Area2D" parent="."]
 position = Vector2(10.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="A1"]
+visible = false
+position = Vector2(0.25, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="A1"]
 position = Vector2(0, -0.25)
@@ -172,22 +339,47 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="A1"]
 stream = ExtResource("13_0cauc")
 
-[node name="As1" type="Area2D" parent="."]
+[node name="A1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("24_bghx2")
+
+[node name="Bb1" type="Area2D" parent="."]
 position = Vector2(15, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="As1"]
+[node name="PointLight2D" type="PointLight2D" parent="Bb1"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+texture = SubResource("GradientTexture2D_jisnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bb1"]
 position = Vector2(0.125, 0.25)
 shape = SubResource("RectangleShape2D_dkl67")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="As1"]
-stream = ExtResource("14_idpbv")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bb1"]
+stream = ExtResource("25_6hp05")
+
+[node name="Bb1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("26_tjwi1")
 
 [node name="B1" type="Area2D" parent="."]
 position = Vector2(20.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="B1"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="B1"]
 position = Vector2(0, -0.25)
@@ -196,10 +388,23 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="B1"]
 stream = ExtResource("15_ushhk")
 
+[node name="B1Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("28_msgrn")
+
 [node name="C2" type="Area2D" parent="."]
 position = Vector2(30.25, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="C2"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="C2"]
 position = Vector2(0, -0.25)
@@ -208,10 +413,23 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="C2"]
 stream = ExtResource("16_0v2tv")
 
+[node name="C2Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("30_r7nmv")
+
 [node name="Cs2" type="Area2D" parent="."]
 position = Vector2(34.75, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Cs2"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cs2"]
 position = Vector2(0.125, 0.25)
@@ -220,10 +438,23 @@ shape = SubResource("RectangleShape2D_dkl67")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cs2"]
 stream = ExtResource("17_s5h6k")
 
+[node name="Cs2Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("32_kad1e")
+
 [node name="D2" type="Area2D" parent="."]
 position = Vector2(40, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="D2"]
+visible = false
+position = Vector2(0.25, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="D2"]
 position = Vector2(0, -0.25)
@@ -232,22 +463,48 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="D2"]
 stream = ExtResource("18_jbrjl")
 
-[node name="Ds2" type="Area2D" parent="."]
+[node name="D2Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("34_i40y7")
+
+[node name="Eb2" type="Area2D" parent="."]
 position = Vector2(45.25, 5)
 collision_layer = 4
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ds2"]
+[node name="PointLight2D" type="PointLight2D" parent="Eb2"]
+visible = false
+position = Vector2(0.15, 2.08165e-12)
+scale = Vector2(0.04, 0.07)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Eb2"]
 position = Vector2(0.125, 0.25)
 shape = SubResource("RectangleShape2D_dkl67")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Ds2"]
-stream = ExtResource("19_vmnps")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Eb2"]
+stream = ExtResource("35_nu7ox")
+
+[node name="Eb2Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("36_2kufe")
 
 [node name="E2" type="Area2D" parent="."]
 position = Vector2(50, 16.25)
 collision_layer = 4
 metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="E2"]
+visible = false
+position = Vector2(0, -6)
+scale = Vector2(0.06, 0.15)
+energy = 0.8
+texture = SubResource("GradientTexture2D_jisnu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="E2"]
 position = Vector2(0, -0.25)
@@ -256,21 +513,27 @@ shape = SubResource("RectangleShape2D_ep7j2")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="E2"]
 stream = ExtResource("20_mna50")
 
+[node name="E2Sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0.25, 0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("38_p65ed")
+
 [connection signal="body_entered" from="B0" to="." method="_on_b_0_body_entered"]
 [connection signal="body_entered" from="C1" to="." method="_on_c_1_body_entered"]
 [connection signal="body_entered" from="Cs1" to="." method="_on_cs_1_body_entered"]
 [connection signal="body_entered" from="D1" to="." method="_on_d_1_body_entered"]
-[connection signal="body_entered" from="Ds1" to="." method="_on_ds_1_body_entered"]
+[connection signal="body_entered" from="Eb1" to="." method="_on_eb_1_body_entered"]
 [connection signal="body_entered" from="E1" to="." method="_on_e_1_body_entered"]
 [connection signal="body_entered" from="F1" to="." method="_on_f_1_body_entered"]
 [connection signal="body_entered" from="Fs1" to="." method="_on_fs_1_body_entered"]
 [connection signal="body_entered" from="G1" to="." method="_on_g_1_body_entered"]
-[connection signal="body_entered" from="Gs1" to="." method="_on_gs_1_body_entered"]
+[connection signal="body_entered" from="Ab1" to="." method="_on_ab_1_body_entered"]
 [connection signal="body_entered" from="A1" to="." method="_on_a_1_body_entered"]
-[connection signal="body_entered" from="As1" to="." method="_on_as_1_body_entered"]
+[connection signal="body_entered" from="Bb1" to="." method="_on_bb_1_body_entered"]
 [connection signal="body_entered" from="B1" to="." method="_on_b_1_body_entered"]
 [connection signal="body_entered" from="C2" to="." method="_on_c_2_body_entered"]
 [connection signal="body_entered" from="Cs2" to="." method="_on_cs_2_body_entered"]
 [connection signal="body_entered" from="D2" to="." method="_on_d_2_body_entered"]
-[connection signal="body_entered" from="Ds2" to="." method="_on_ds_2_body_entered"]
+[connection signal="body_entered" from="Eb2" to="." method="_on_eb_2_body_entered"]
 [connection signal="body_entered" from="E2" to="." method="_on_e_2_body_entered"]

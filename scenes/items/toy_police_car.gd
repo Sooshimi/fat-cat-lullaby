@@ -4,12 +4,12 @@ extends RigidBody2D
 @onready var note_timer : Node = $NoteTimer
 @onready var baby : CharacterBody2D = get_parent().get_node("Baby")
 
-@export_enum("B0", "C1", "Cs1", "D1", "Ds1", "E1", "F1", "Fs1", "G1", "Gs1",\
- "A1", "As1", "B1", "C2", "Cs2", "D2", "Ds2", "E2") var key_1 : String
-@export_enum("B0", "C1", "Cs1", "D1", "Ds1", "E1", "F1", "Fs1", "G1", "Gs1",\
- "A1", "As1", "B1", "C2", "Cs2", "D2", "Ds2", "E2") var key_2 : String
-@export_enum("B0", "C1", "Cs1", "D1", "Ds1", "E1", "F1", "Fs1", "G1", "Gs1",\
- "A1", "As1", "B1", "C2", "Cs2", "D2", "Ds2", "E2") var key_3 : String
+@export_enum("B0", "C1", "Cs1", "D1", "Eb1", "E1", "F1", "Fs1", "G1", "Ab1",\
+"A1", "Bb1", "B1", "C2", "Cs2", "D2", "Eb2", "E2") var key_1 : String
+@export_enum("B0", "C1", "Cs1", "D1", "Eb1", "E1", "F1", "Fs1", "G1", "Ab1",\
+"A1", "Bb1", "B1", "C2", "Cs2", "D2", "Eb2", "E2") var key_2 : String
+@export_enum("B0", "C1", "Cs1", "D1", "Eb1", "E1", "F1", "Fs1", "G1", "Ab1",\
+"A1", "Bb1", "B1", "C2", "Cs2", "D2", "Eb2", "E2") var key_3 : String
 
 var tune : Array
 
