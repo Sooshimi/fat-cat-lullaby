@@ -145,6 +145,10 @@ key_2 = "fs1"
 key_3 = "eb2"
 baby_emotion_trigger = "angry"
 
+[node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
+position = Vector2(287, 332)
+player = NodePath("../FatCat")
+
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(182, 259)
 
@@ -206,10 +210,6 @@ offset_bottom = 512.0
 texture = SubResource("NoiseTexture2D_qk3ee")
 stretch_mode = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(287, 332)
-player = NodePath("../FatCat")
 
 [node name="Laser" parent="." instance=ExtResource("6_usot1")]
 

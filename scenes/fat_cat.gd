@@ -108,6 +108,7 @@ func _physics_process(delta) -> void:
 		if collision:
 			is_rolling = false
 			is_grounded = true
+			animation_tree.get("parameters/playback").travel("Slide")
 			# Allows player to slide on walls
 			velocity = velocity.slide(collision.get_normal())
 			

@@ -391,7 +391,7 @@ states/Slide_to_roll/node = SubResource("AnimationNodeBlendSpace2D_xk1fm")
 states/Slide_to_roll/position = Vector2(579.463, 298.685)
 states/Start/position = Vector2(102, 169.5)
 transitions = ["Slide", "Jump", SubResource("AnimationNodeStateMachineTransition_50a8p"), "Jump", "Slide", SubResource("AnimationNodeStateMachineTransition_iurry"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ecyaf"), "Idle", "Idle_to_roll", SubResource("AnimationNodeStateMachineTransition_nbhtb"), "Idle_to_roll", "Roll", SubResource("AnimationNodeStateMachineTransition_13rdm"), "Slide", "Slide_to_idle", SubResource("AnimationNodeStateMachineTransition_y3xrg"), "Slide_to_idle", "Idle", SubResource("AnimationNodeStateMachineTransition_5nkcp"), "Slide", "Slide_to_roll", SubResource("AnimationNodeStateMachineTransition_c8i8e"), "Slide_to_roll", "Roll", SubResource("AnimationNodeStateMachineTransition_ibfmv"), "Roll", "Slide", SubResource("AnimationNodeStateMachineTransition_mmk2m"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_duwsi"), "Slide_to_idle", "Jump", SubResource("AnimationNodeStateMachineTransition_ksjkq")]
-graph_offset = Vector2(-12.2, 7.44)
+graph_offset = Vector2(79.8, 49.44)
 
 [node name="FatCat" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
