@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://kma27y8f1xji" path="res://audio/keys/B0.ogg" id="3_1v7f0"]
 [ext_resource type="AudioStream" uid="uid://dy115xvyp56eb" path="res://audio/keys/C1.ogg" id="3_afh32"]
 [ext_resource type="AudioStream" uid="uid://d3b6i4fbpikx" path="res://audio/keys/D1.ogg" id="4_7t2rq"]
-[ext_resource type="Texture2D" uid="uid://n8ykeloeyc5o" path="res://assets/items/coloured_notes/B0 purple.png" id="4_wtfhv"]
+[ext_resource type="Texture2D" uid="uid://d00mi5vsijm5y" path="res://assets/items/coloured_notes/B0 purple fur.png" id="4_dx6wl"]
 [ext_resource type="AudioStream" uid="uid://cvo8ckidnhnmb" path="res://audio/keys/Cs1.ogg" id="5_73dr5"]
 [ext_resource type="Texture2D" uid="uid://cfldksosier26" path="res://assets/items/coloured_notes/C1 red.png" id="6_axqq6"]
 [ext_resource type="AudioStream" uid="uid://cepitx82ektma" path="res://audio/keys/E1.ogg" id="8_fw0yr"]
@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cvrl8ig7i454w" path="res://assets/items/coloured_notes/D2 Green.png" id="34_i40y7"]
 [ext_resource type="AudioStream" uid="uid://ck8rw7ispirod" path="res://audio/keys/Eb2.ogg" id="35_nu7ox"]
 [ext_resource type="Texture2D" uid="uid://bdnbiqmggtywo" path="res://assets/items/coloured_notes/Eb2 mauve.png" id="36_2kufe"]
-[ext_resource type="Texture2D" uid="uid://kk6ngaq243mp" path="res://assets/items/coloured_notes/E2 lilac.png" id="38_p65ed"]
+[ext_resource type="Texture2D" uid="uid://b50rk5e34nt74" path="res://assets/items/coloured_notes/E2 lilac fur.png" id="38_2np8a"]
 
 [sub_resource type="Gradient" id="Gradient_g6rpn"]
 offsets = PackedFloat32Array(0.773987, 1)
@@ -93,7 +93,7 @@ stream = ExtResource("3_1v7f0")
 visible = false
 position = Vector2(0.25, 0)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("4_wtfhv")
+texture = ExtResource("4_dx6wl")
 
 [node name="C1" type="Area2D" parent="."]
 position = Vector2(-39.25, 16.25)
@@ -519,7 +519,7 @@ stream = ExtResource("20_mna50")
 visible = false
 position = Vector2(0.25, 0)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("38_p65ed")
+texture = ExtResource("38_2np8a")
 
 [connection signal="body_entered" from="B0" to="." method="_on_b_0_body_entered"]
 [connection signal="body_entered" from="C1" to="." method="_on_c_1_body_entered"]
