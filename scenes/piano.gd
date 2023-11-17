@@ -122,11 +122,13 @@ func _ready() -> void:
 func _emit_key_played() -> void:
 	key_played.emit()
 
-func trigger_piano_key(key:String) -> void:
-	_emit_key_played()
+func trigger_piano_key(key:String, play_sound:bool = true) -> void:
 	for note in key_dictionary:
 		if note == key:
-			key_dictionary[note]["sound"].play()
+			Global.keys_played.append(key)
+			
+			if play_sound:
+				key_dictionary[note]["sound"].play()
 			key_dictionary[note]["colour_key"].show()
 			key_dictionary[note]["light_key"].show()
 			
@@ -142,54 +144,72 @@ func trigger_piano_key(key:String) -> void:
 
 func _on_b_0_body_entered(body):
 	trigger_piano_key("b0")
+	_emit_key_played()
 
 func _on_c_1_body_entered(body):
 	trigger_piano_key("c1")
+	_emit_key_played()
 
 func _on_cs_1_body_entered(body):
 	trigger_piano_key("cs1")
+	_emit_key_played()
 
 func _on_d_1_body_entered(body):
 	trigger_piano_key("d1")
+	_emit_key_played()
 
 func _on_eb_1_body_entered(body):
 	trigger_piano_key("eb1")
+	_emit_key_played()
 
 func _on_e_1_body_entered(body):
 	trigger_piano_key("e1")
+	_emit_key_played()
 
 func _on_f_1_body_entered(body):
 	trigger_piano_key("f1")
+	_emit_key_played()
 
 func _on_fs_1_body_entered(body):
 	trigger_piano_key("fs1")
+	_emit_key_played()
 
 func _on_g_1_body_entered(body):
 	trigger_piano_key("g1")
+	_emit_key_played()
 
 func _on_ab_1_body_entered(body):
 	trigger_piano_key("ab1")
+	_emit_key_played()
 
 func _on_a_1_body_entered(body):
 	trigger_piano_key("a1")
+	_emit_key_played()
 
 func _on_bb_1_body_entered(body):
 	trigger_piano_key("bb1")
+	_emit_key_played()
 
 func _on_b_1_body_entered(body):
 	trigger_piano_key("b1")
+	_emit_key_played()
 
 func _on_c_2_body_entered(body):
 	trigger_piano_key("c2")
+	_emit_key_played()
 
 func _on_cs_2_body_entered(body):
 	trigger_piano_key("cs2")
+	_emit_key_played()
 
 func _on_d_2_body_entered(body):
 	trigger_piano_key("d2")
+	_emit_key_played()
 
 func _on_eb_2_body_entered(body):
 	trigger_piano_key("eb2")
+	_emit_key_played()
 
 func _on_e_2_body_entered(body):
 	trigger_piano_key("e2")
+	_emit_key_played()

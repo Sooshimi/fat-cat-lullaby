@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED_SLEEPY : int = 20
-const SPEED_NORMAL : int = 40
-const SPEED_ANGRY : int = 60
+const SPEED_SLEEPY : int = 0
+const SPEED_NORMAL : int = 0
+const SPEED_ANGRY : int = 0
 var speed : int = SPEED_NORMAL
 
 var emote_sleepy : Resource = load("res://assets/emotes/emote_sleeps.png")
