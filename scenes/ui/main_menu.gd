@@ -13,12 +13,13 @@ var play_pressed : bool = false
 func _process(delta):
 	if play_pressed:
 		canvas.color = lerp(canvas.color, Color(0,0,0,1), 4 * delta)
-		music.volume_db = lerp(music.volume_db, -80.0, 1 * delta)
+		music.volume_db = lerp(music.volume_db, -80.0, 0.8 * delta)
 
 func _on_play_pressed() -> void:
 	button_click_sound.play()
 	fade_out_timer.start()
 	play_pressed = true
+	play_button.disabled = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	await fade_out_timer.timeout
 	play_pressed = false

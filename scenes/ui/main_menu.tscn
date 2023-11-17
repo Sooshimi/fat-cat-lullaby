@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://voqe5n08ecce"]
+[gd_scene load_steps=12 format=3 uid="uid://voqe5n08ecce"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_xofwq"]
+[ext_resource type="Texture2D" uid="uid://octxogcfgnxo" path="res://assets/world/space_bg.png" id="2_2ebls"]
 [ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="2_rph22"]
 [ext_resource type="Shader" path="res://shaders/crt.gdshader" id="3_i8bmo"]
 [ext_resource type="AudioStream" uid="uid://dpfgdpvykmo1h" path="res://audio/ui/pluck_001.ogg" id="3_w4pil"]
@@ -47,11 +48,15 @@ music = NodePath("Music")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 2
-offset_right = 360.0
-offset_bottom = 360.0
-color = Color(0.0509804, 0.0823529, 0.121569, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2ebls")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

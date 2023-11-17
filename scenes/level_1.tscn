@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=35 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://1osb4d1q70vv" path="res://scenes/items/furniture/pillow_red.tscn" id="27_8iu11"]
 [ext_resource type="PackedScene" uid="uid://btvjpf7noghhc" path="res://scenes/items/furniture/pillow_yellow.tscn" id="28_63xr4"]
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
+[ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -232,3 +233,7 @@ volume_db = -15.0
 [node name="GameOverLaugh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_bshae")
 volume_db = -5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_ngldc")
+autoplay = true
