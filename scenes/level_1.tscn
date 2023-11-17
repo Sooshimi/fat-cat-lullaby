@@ -130,17 +130,17 @@ position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." instance=ExtResource("8_cu1mq")]
 position = Vector2(144, 329)
-key_1 = "D"
-key_2 = "C"
-key_3 = "E"
-baby_emotion_trigger = "angry"
+key_1 = "F1"
+key_2 = "Ds1"
+key_3 = "C1"
+baby_emotion_trigger = "sleepy"
 
 [node name="ToyPoliceCar2" parent="." instance=ExtResource("8_cu1mq")]
 position = Vector2(82, 245)
-key_1 = "E"
-key_2 = "D"
-key_3 = "C"
-baby_emotion_trigger = "sleepy"
+key_1 = "D1"
+key_2 = "G1"
+key_3 = "A1"
+baby_emotion_trigger = "angry"
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(182, 259)

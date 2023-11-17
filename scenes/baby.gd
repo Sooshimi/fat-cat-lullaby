@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED_SLEEPY : int = 30
-const SPEED_NORMAL : int = 50
+const SPEED_SLEEPY : int = 20
+const SPEED_NORMAL : int = 40
 const SPEED_ANGRY : int = 60
 var speed : int = SPEED_NORMAL
 
@@ -44,6 +44,7 @@ func _physics_process(delta) -> void:
 			if "FatCat" in collision.get_collider().name:
 				# Stop baby from moving
 				signal_game_over.emit()
+				Global.game_over = true
 				nav_agent.navigation_layers = 0
 		
 		play_move_animations()

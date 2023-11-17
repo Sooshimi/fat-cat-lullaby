@@ -346,7 +346,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Baby" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 29
+collision_mask = 25
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_0363r")

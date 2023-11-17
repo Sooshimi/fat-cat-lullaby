@@ -28,7 +28,6 @@ func _ready() -> void:
 func play_move_animations() -> void:
 	# If enemy not moving, travel to idle animation
 	if velocity == Vector2.ZERO:
-#		animation_tree.get("parameters/playback").travel("Idle")
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/slide_to_idle"] = true
 	else:
@@ -54,7 +53,6 @@ func _physics_process(delta) -> void:
 					animation_tree["parameters/conditions/roll_to_slide"] = true
 					animation_tree["parameters/conditions/slide_to_idle"] = false
 					animation_tree["parameters/conditions/slide_to_roll"] = false
-#					animation_tree.get("parameters/playback").travel("Slide")
 					# Turn player collision box back on after landing
 					collision_shape.disabled = false
 					is_rolling = false
@@ -67,7 +65,6 @@ func _physics_process(delta) -> void:
 				is_jumping:
 					animation_tree["parameters/conditions/land"] = true
 					animation_tree["parameters/conditions/jump"] = false
-#					animation_tree.get("parameters/playback").travel("Slide")
 					collision_shape.disabled = false
 					is_rolling = false
 					is_grounded = true
@@ -78,7 +75,6 @@ func _physics_process(delta) -> void:
 		if is_rolling || is_jumping:
 			# Move cat
 			velocity = global_position.direction_to(target) * speed
-#			animation_tree.get("parameters/playback").travel("Roll")
 		# Cat sliding
 		else:
 			# Short cat slide after rolling/jumping has finished
@@ -86,7 +82,6 @@ func _physics_process(delta) -> void:
 				# Rolling to slide to idle
 				animation_tree["parameters/conditions/slide_to_idle"] = true
 				animation_tree["parameters/conditions/idle_to_roll"] = false
-#			animation_tree.get("parameters/playback").travel("Slide")
 			velocity = velocity.move_toward(Vector2.ZERO, 8)
 			
 			# Allow one jump during this window
@@ -98,7 +93,6 @@ func _physics_process(delta) -> void:
 				animation_tree["parameters/conditions/jump"] = true
 				animation_tree["parameters/conditions/land"] = false
 				animation_tree["parameters/conditions/slide_to_idle"] = false
-#				animation_tree.get("parameters/playback").travel("Jump")
 				collision_shape.disabled = true
 				is_grounded = false
 				is_rolling = true
@@ -112,7 +106,6 @@ func _physics_process(delta) -> void:
 		collision = move_and_collide(velocity * delta, false, 0.00)
 		
 		if collision:
-#			animation_tree.get("parameters/playback").travel("Slide")
 			is_rolling = false
 			is_grounded = true
 			# Allows player to slide on walls
