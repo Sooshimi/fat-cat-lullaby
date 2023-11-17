@@ -57,6 +57,7 @@ extends Node2D
 @onready var eb2_light : PointLight2D = $Eb2/PointLight2D
 @onready var e2_light : PointLight2D = $E2/PointLight2D
 
+# Dictionary of key strings and their respective node refs
 @onready var key_dictionary : Dictionary =\
 	{"b0" = {"sound": b0,\
 			"colour_key": b0_key,\
@@ -119,19 +120,24 @@ signal key_played
 func _ready() -> void:
 	key_played.connect(Global.check_key_order)
 
+# Emit signal to Global to check keys played
 func _emit_key_played() -> void:
 	key_played.emit()
 
-func trigger_piano_key(key:String, play_sound:bool = true) -> void:
+# Triggers piano keys to play key sound, and show key colour and light up
+func trigger_piano_key(key:String, key_pressed:bool = true) -> void:
 	for note in key_dictionary:
 		if note == key:
-			Global.keys_played.append(key)
-			
-			if play_sound:
+			# Only run the below if a key is actually pressed. This func is
+			# also called from toys which light up the piano keys.
+			if key_pressed:
+				Global.keys_played.append(key)
 				key_dictionary[note]["sound"].play()
+				_emit_key_played()
 			key_dictionary[note]["colour_key"].show()
 			key_dictionary[note]["light_key"].show()
 			
+			# Add timer to remove key colour and light
 			var timer : Timer = Timer.new()
 			add_child(timer)
 			timer.wait_time = 1.0
@@ -144,72 +150,54 @@ func trigger_piano_key(key:String, play_sound:bool = true) -> void:
 
 func _on_b_0_body_entered(body):
 	trigger_piano_key("b0")
-	_emit_key_played()
 
 func _on_c_1_body_entered(body):
 	trigger_piano_key("c1")
-	_emit_key_played()
 
 func _on_cs_1_body_entered(body):
 	trigger_piano_key("cs1")
-	_emit_key_played()
 
 func _on_d_1_body_entered(body):
 	trigger_piano_key("d1")
-	_emit_key_played()
 
 func _on_eb_1_body_entered(body):
 	trigger_piano_key("eb1")
-	_emit_key_played()
 
 func _on_e_1_body_entered(body):
 	trigger_piano_key("e1")
-	_emit_key_played()
 
 func _on_f_1_body_entered(body):
 	trigger_piano_key("f1")
-	_emit_key_played()
 
 func _on_fs_1_body_entered(body):
 	trigger_piano_key("fs1")
-	_emit_key_played()
 
 func _on_g_1_body_entered(body):
 	trigger_piano_key("g1")
-	_emit_key_played()
 
 func _on_ab_1_body_entered(body):
 	trigger_piano_key("ab1")
-	_emit_key_played()
 
 func _on_a_1_body_entered(body):
 	trigger_piano_key("a1")
-	_emit_key_played()
 
 func _on_bb_1_body_entered(body):
 	trigger_piano_key("bb1")
-	_emit_key_played()
 
 func _on_b_1_body_entered(body):
 	trigger_piano_key("b1")
-	_emit_key_played()
 
 func _on_c_2_body_entered(body):
 	trigger_piano_key("c2")
-	_emit_key_played()
 
 func _on_cs_2_body_entered(body):
 	trigger_piano_key("cs2")
-	_emit_key_played()
 
 func _on_d_2_body_entered(body):
 	trigger_piano_key("d2")
-	_emit_key_played()
 
 func _on_eb_2_body_entered(body):
 	trigger_piano_key("eb2")
-	_emit_key_played()
 
 func _on_e_2_body_entered(body):
 	trigger_piano_key("e2")
-	_emit_key_played()

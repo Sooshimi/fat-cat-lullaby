@@ -75,7 +75,7 @@ position = Vector2(169, 431)
 position = Vector2(239, 433)
 
 [node name="Chair2" parent="." instance=ExtResource("16_2aotx")]
-position = Vector2(116, 368)
+position = Vector2(185, 517)
 
 [node name="Chair3" parent="." instance=ExtResource("16_2aotx")]
 position = Vector2(123, 479)
@@ -129,7 +129,7 @@ position = Vector2(294, -93)
 position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(144, 329)
+position = Vector2(173, 358)
 piano = NodePath("../Piano")
 key_1 = "f1"
 key_2 = "eb1"
@@ -137,7 +137,7 @@ key_3 = "g1"
 baby_emotion_trigger = "sleepy"
 
 [node name="ToyPoliceCar2" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(82, 245)
+position = Vector2(62, 315)
 piano = NodePath("../Piano")
 key_1 = "bb1"
 key_2 = "fs1"

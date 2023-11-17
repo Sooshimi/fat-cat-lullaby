@@ -39,7 +39,7 @@ func _physics_process(delta) -> void:
 		
 		# Get collision info
 		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
+			collision = get_slide_collision(i)
 			# If baby collides with cat...
 			if "FatCat" in collision.get_collider().name:
 				# Stop baby from moving
