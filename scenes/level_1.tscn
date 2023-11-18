@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=39 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://kpexsubl1ucm" path="res://scenes/items/toy_croco_xylo.tscn" id="20_2a4ju"]
 [ext_resource type="PackedScene" uid="uid://bbs3e114mheay" path="res://scenes/items/furniture/beach_ball.tscn" id="20_jcckc"]
 [ext_resource type="PackedScene" uid="uid://khey0kn2cdsn" path="res://scenes/items/furniture/empty_shelf.tscn" id="21_cp4qk"]
+[ext_resource type="PackedScene" uid="uid://cp08c0r023ng6" path="res://scenes/items/star_yellow.tscn" id="21_ecawh"]
+[ext_resource type="PackedScene" uid="uid://bme1twe8fo2i5" path="res://scenes/items/star_blue.tscn" id="22_cnuea"]
 [ext_resource type="PackedScene" uid="uid://stbt8u7l1e4w" path="res://scenes/items/furniture/wardrobe_tall.tscn" id="22_numcx"]
 [ext_resource type="PackedScene" uid="uid://yu61bci02qnb" path="res://scenes/items/furniture/tv.tscn" id="23_lgab1"]
 [ext_resource type="PackedScene" uid="uid://dtexwmu7kd14r" path="res://scenes/items/furniture/plant_1.tscn" id="24_hrias"]
@@ -57,13 +59,14 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_qnfct")
 noise = SubResource("FastNoiseLite_ahm4g")
 
-[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow", "game_over_laugh")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow", "game_over_laugh", "player")]
 script = ExtResource("1_ddu6q")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
 game_over_menu = NodePath("CanvasLayer/GameOver")
 win_menu = NodePath("CanvasLayer/WinMenu")
 game_over_meow = NodePath("GameOverMeow")
 game_over_laugh = NodePath("GameOverLaugh")
+player = NodePath("FatCat")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
@@ -146,6 +149,38 @@ key_1 = "ab1"
 key_2 = "bb1"
 key_3 = "e2"
 baby_emotion_trigger = "normal"
+
+[node name="StarYellow" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
+position = Vector2(267, -46)
+player = NodePath("../FatCat")
+
+[node name="StarYellow2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
+position = Vector2(-94, 485)
+player = NodePath("../FatCat")
+
+[node name="StarYellow3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
+position = Vector2(254, 550)
+player = NodePath("../FatCat")
+
+[node name="StarYellow4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
+position = Vector2(23, 372)
+player = NodePath("../FatCat")
+
+[node name="StarBlue" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
+position = Vector2(471, 302)
+player = NodePath("../FatCat")
+
+[node name="StarBlue2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
+position = Vector2(-128, -10)
+player = NodePath("../FatCat")
+
+[node name="StarBlue3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
+position = Vector2(500, 10)
+player = NodePath("../FatCat")
+
+[node name="StarBlue4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
+position = Vector2(468, 498)
+player = NodePath("../FatCat")
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(287, 332)

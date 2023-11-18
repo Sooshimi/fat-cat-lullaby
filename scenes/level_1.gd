@@ -5,8 +5,19 @@ extends Node
 @export var win_menu : Control
 @export var game_over_meow : AudioStreamPlayer
 @export var game_over_laugh : AudioStreamPlayer
+@export var player : CharacterBody2D
+
+@onready var player_light : PointLight2D = $FatCat/PlayerLight
+@onready var shadow_light : PointLight2D = $FatCat/ShadowLight
 
 var run_once_counter : int = 0
+var player_light_raw : float
+
+func _process(delta):
+	player_light.texture_scale -= 0.02 * delta
+	player_light.texture_scale = clamp(player_light.texture_scale, 0.0, 0.9)
+	shadow_light.texture_scale -= 0.02 * delta
+	shadow_light.texture_scale = clamp(shadow_light.texture_scale, 0.0, 0.9)
 
 func game_over():
 	run_once_counter += 1
