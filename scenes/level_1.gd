@@ -14,9 +14,9 @@ var run_once_counter : int = 0
 var player_light_raw : float
 
 func _process(delta):
-	player_light.texture_scale -= 0.015 * delta
+	player_light.texture_scale -= 0.01 * delta
 	player_light.texture_scale = clamp(player_light.texture_scale, 0.0, 0.9)
-	shadow_light.texture_scale -= 0.015 * delta
+	shadow_light.texture_scale -= 0.01 * delta
 	shadow_light.texture_scale = clamp(shadow_light.texture_scale, 0.0, 0.9)
 
 func game_over():
