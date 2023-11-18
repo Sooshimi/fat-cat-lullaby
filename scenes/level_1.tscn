@@ -140,7 +140,7 @@ piano = NodePath("../Piano")
 key_1 = "f1"
 key_2 = "eb1"
 key_3 = "g1"
-baby_emotion_trigger = "sleepy"
+baby_emotion_trigger = "angry"
 
 [node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
 position = Vector2(146, 52)
@@ -148,7 +148,7 @@ piano = NodePath("../Piano")
 key_1 = "e1"
 key_2 = "g1"
 key_3 = "b1"
-baby_emotion_trigger = "normal"
+baby_emotion_trigger = "sleepy"
 
 [node name="StarYellow" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
 position = Vector2(267, -46)
