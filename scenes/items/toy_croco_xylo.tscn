@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://kpexsubl1ucm"]
+
+[ext_resource type="Script" path="res://scenes/items/toy_croco_xylo.gd" id="1_b0dc4"]
+[ext_resource type="Texture2D" uid="uid://pgpbdgfbuek" path="res://assets/items/croco_xylo.png" id="1_my1lo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhbko"]
+radius = 3.81935
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdvti"]
+radius = 4.25455
+height = 30.0606
+
+[node name="CrocoXylo" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 3
+gravity_scale = 2.66454e-15
+script = ExtResource("1_b0dc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_my1lo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.797, -1.92)
+rotation = 1.39626
+scale = Vector2(1.55, 1.55)
+shape = SubResource("CapsuleShape2D_hhbko")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.8, -2.02)
+rotation = 1.39626
+scale = Vector2(1.65, 1.65)
+shape = SubResource("CapsuleShape2D_pdvti")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="NoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

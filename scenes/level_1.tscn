@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=37 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d2lv3mf5yj2b2" path="res://scenes/items/furniture/bookshelf_tall.tscn" id="17_2is0m"]
 [ext_resource type="PackedScene" uid="uid://dxbakdlk40lej" path="res://scenes/items/furniture/bookshelf_short.tscn" id="18_j8yyq"]
 [ext_resource type="PackedScene" uid="uid://c7quonp4kgl4n" path="res://scenes/items/furniture/horse.tscn" id="19_dvn0x"]
+[ext_resource type="PackedScene" uid="uid://kpexsubl1ucm" path="res://scenes/items/toy_croco_xylo.tscn" id="20_2a4ju"]
 [ext_resource type="PackedScene" uid="uid://bbs3e114mheay" path="res://scenes/items/furniture/beach_ball.tscn" id="20_jcckc"]
 [ext_resource type="PackedScene" uid="uid://khey0kn2cdsn" path="res://scenes/items/furniture/empty_shelf.tscn" id="21_cp4qk"]
 [ext_resource type="PackedScene" uid="uid://stbt8u7l1e4w" path="res://scenes/items/furniture/wardrobe_tall.tscn" id="22_numcx"]
@@ -131,20 +132,20 @@ position = Vector2(294, -93)
 position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(173, 358)
+position = Vector2(113, 330)
 piano = NodePath("../Piano")
 key_1 = "f1"
 key_2 = "eb1"
 key_3 = "g1"
 baby_emotion_trigger = "sleepy"
 
-[node name="ToyPoliceCar2" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(62, 315)
+[node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
+position = Vector2(146, 52)
 piano = NodePath("../Piano")
-key_1 = "bb1"
-key_2 = "fs1"
-key_3 = "eb2"
-baby_emotion_trigger = "angry"
+key_1 = "ab1"
+key_2 = "bb1"
+key_3 = "e2"
+baby_emotion_trigger = "normal"
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(287, 332)
@@ -197,14 +198,6 @@ size_flags_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Grain" type="TextureRect" parent="FatCat/Camera2D/CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0.0313726)
-offset_right = 512.0
-offset_bottom = 512.0
-texture = SubResource("NoiseTexture2D_qk3ee")
-stretch_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Grain2" type="TextureRect" parent="FatCat/Camera2D/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.0313726)
 offset_right = 512.0
 offset_bottom = 512.0
