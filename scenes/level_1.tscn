@@ -222,7 +222,6 @@ player = NodePath("../FatCat")
 position = Vector2(183, 299)
 
 [node name="PlayerLight" type="PointLight2D" parent="FatCat"]
-visible = false
 energy = 0.8
 shadow_enabled = true
 shadow_filter = 1
@@ -281,7 +280,6 @@ position = Vector2(174, 571)
 [node name="LaserPoint" parent="." instance=ExtResource("25_x1uy3")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="RoomLightTimer" type="Timer" parent="."]

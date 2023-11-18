@@ -64,7 +64,7 @@ func _physics_process(delta) -> void:
 					animation_tree["parameters/conditions/land"] = true
 					animation_tree["parameters/conditions/jump"] = false
 					# Turn player collision box back on after landing
-					collision_shape.disabled = false
+					collision_shape.disabled = false 
 					is_rolling = false
 					is_grounded = true
 					is_jumping = false
@@ -107,6 +107,8 @@ func _physics_process(delta) -> void:
 		if collision:
 			is_rolling = false
 			is_grounded = true
+			animation_tree["parameters/conditions/jump"] = false
+			animation_tree["parameters/conditions/land"] = false
 			animation_tree.get("parameters/playback").travel("Slide")
 			# Allows player to slide on walls
 			velocity = velocity.slide(collision.get_normal())
