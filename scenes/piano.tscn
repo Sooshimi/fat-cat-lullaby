@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://krcrgk7ddf8"]
+[gd_scene load_steps=45 format=3 uid="uid://krcrgk7ddf8"]
 
 [ext_resource type="Script" path="res://scenes/piano.gd" id="1_w4nf5"]
 [ext_resource type="Texture2D" uid="uid://b8jfaib7lme4g" path="res://assets/items/Piano_NO_COLOUR.png" id="2_6i507"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://ck8rw7ispirod" path="res://audio/keys/Eb2.ogg" id="35_nu7ox"]
 [ext_resource type="Texture2D" uid="uid://bdnbiqmggtywo" path="res://assets/items/coloured_notes/Eb2 mauve.png" id="36_2kufe"]
 [ext_resource type="Texture2D" uid="uid://b50rk5e34nt74" path="res://assets/items/coloured_notes/E2 lilac fur.png" id="38_2np8a"]
+[ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="39_dfxoa"]
 
 [sub_resource type="Gradient" id="Gradient_g6rpn"]
 offsets = PackedFloat32Array(0.773987, 1)
@@ -520,6 +521,20 @@ visible = false
 position = Vector2(0.25, 0)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("38_2np8a")
+
+[node name="LeftEyeLight" type="PointLight2D" parent="."]
+position = Vector2(-16.4023, -3.59215)
+scale = Vector2(0.04, 0.04)
+energy = 0.8
+texture = ExtResource("39_dfxoa")
+texture_scale = 0.1
+
+[node name="RightEyeLight" type="PointLight2D" parent="."]
+position = Vector2(16, -3.60156)
+scale = Vector2(0.04, 0.04)
+energy = 0.8
+texture = ExtResource("39_dfxoa")
+texture_scale = 0.1
 
 [connection signal="body_entered" from="B0" to="." method="_on_b_0_body_entered"]
 [connection signal="body_entered" from="C1" to="." method="_on_c_1_body_entered"]
