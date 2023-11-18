@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://hb53s1ox6xse"]
+[gd_scene load_steps=2 format=3 uid="uid://dcr6dxhp5jj7j"]
 
 [ext_resource type="Script" path="res://autoloads/Audio.gd" id="1_03pcn"]
 
@@ -6,3 +6,7 @@
 script = ExtResource("1_03pcn")
 
 [node name="ToyMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 9.0
+one_shot = true
