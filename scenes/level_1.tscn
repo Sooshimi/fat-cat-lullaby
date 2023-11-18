@@ -80,13 +80,13 @@ position = Vector2(-165, -137)
 position = Vector2(169, 431)
 
 [node name="Chair" parent="." instance=ExtResource("16_2aotx")]
-position = Vector2(239, 433)
+position = Vector2(277, 444)
 
 [node name="Chair2" parent="." instance=ExtResource("16_2aotx")]
-position = Vector2(185, 517)
+position = Vector2(169, 525)
 
 [node name="Chair3" parent="." instance=ExtResource("16_2aotx")]
-position = Vector2(123, 479)
+position = Vector2(66, 433)
 
 [node name="BookshelfTall" parent="." instance=ExtResource("17_2is0m")]
 position = Vector2(-114, -69)
@@ -97,8 +97,17 @@ position = Vector2(-41, -52)
 [node name="Horse" parent="." instance=ExtResource("19_dvn0x")]
 position = Vector2(362, 34)
 
+[node name="Horse2" parent="." instance=ExtResource("19_dvn0x")]
+position = Vector2(473, 439)
+
 [node name="BeachBall" parent="." instance=ExtResource("20_jcckc")]
 position = Vector2(11, -44)
+
+[node name="BeachBall2" parent="." instance=ExtResource("20_jcckc")]
+position = Vector2(389, 508)
+
+[node name="BeachBall3" parent="." instance=ExtResource("20_jcckc")]
+position = Vector2(-102, 233)
 
 [node name="EmptyShelf" parent="." instance=ExtResource("21_cp4qk")]
 position = Vector2(51, -66)
@@ -113,13 +122,19 @@ position = Vector2(455, -72)
 position = Vector2(189, -65)
 
 [node name="Plant1" parent="." instance=ExtResource("24_hrias")]
+position = Vector2(-134, 143)
+
+[node name="Plant3" parent="." instance=ExtResource("24_hrias")]
 position = Vector2(508, -62)
 
 [node name="Plant2" parent="." instance=ExtResource("25_p56g8")]
+position = Vector2(-134, 284)
+
+[node name="Plant4" parent="." instance=ExtResource("25_p56g8")]
 position = Vector2(231, -55)
 
 [node name="PillowOrange2" parent="." instance=ExtResource("26_jaiyy")]
-position = Vector2(441, 324)
+position = Vector2(-75, 280)
 
 [node name="PillowRed" parent="." instance=ExtResource("27_8iu11")]
 position = Vector2(435, 341)
