@@ -8,7 +8,7 @@ var current_scene
 #  "Bb1", "B1", "C2", "Cs2", "D2", "Eb2", "E2"]
 
 var keys_played : Array = []
-var lullaby : Array = ["f1", "eb1", "g1"]
+var lullaby : Array = ["e1", "g1", "b1"]
 
 signal signal_win
 

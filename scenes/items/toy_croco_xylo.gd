@@ -35,11 +35,9 @@ func load_keys() -> void:
 
 func _on_area_2d_body_entered(_body) -> void:
 	baby.trigger_emote(baby_emotion_trigger)
+	note.play()
 	
 	for i in tune_load.size():
-		var key_load = tune_load[i]
-		note.stream = key_load
-		note.play()
 		note_timer.start()
 		piano.trigger_piano_key(tune_strings[i], false)
 		await note_timer.timeout
