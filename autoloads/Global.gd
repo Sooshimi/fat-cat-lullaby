@@ -1,5 +1,6 @@
 extends Node
 
+var game_start : bool
 var game_over : bool = false
 var win : bool = false
 var current_scene

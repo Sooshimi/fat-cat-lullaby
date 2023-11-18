@@ -36,7 +36,7 @@ func play_move_animations() -> void:
 func _physics_process(delta) -> void:
 	play_move_animations()
 	
-	if !Global.game_over && !Global.win:
+	if !Global.game_over && !Global.win && Global.game_start:
 		if Input.is_action_just_pressed("left_click") && !is_rolling:
 			animation_tree["parameters/conditions/idle_to_roll"] = true
 			animation_tree["parameters/conditions/roll_to_slide"] = false

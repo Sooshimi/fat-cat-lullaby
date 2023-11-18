@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=44 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
 [ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
 [ext_resource type="PackedScene" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
+[ext_resource type="AudioStream" uid="uid://cc1tt6beono2e" path="res://audio/sfx/switch_001.ogg" id="39_eg0of"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -206,6 +207,7 @@ player = NodePath("../FatCat")
 position = Vector2(183, 299)
 
 [node name="PlayerLight" type="PointLight2D" parent="FatCat"]
+visible = false
 energy = 0.8
 shadow_enabled = true
 shadow_filter = 1
@@ -264,7 +266,12 @@ position = Vector2(174, 571)
 [node name="LaserPoint" parent="." instance=ExtResource("25_x1uy3")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[node name="RoomLightTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -284,6 +291,11 @@ volume_db = -15.0
 stream = ExtResource("14_bshae")
 volume_db = -5.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="RoomHum" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_ngldc")
 autoplay = true
+
+[node name="LightSwitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_eg0of")
+
+[connection signal="timeout" from="RoomLightTimer" to="." method="_on_room_light_timer_timeout"]

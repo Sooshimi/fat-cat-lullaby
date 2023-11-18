@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED_SLEEPY : int = 0
-const SPEED_NORMAL : int = 0
-const SPEED_ANGRY : int = 0
+const SPEED_SLEEPY : int = 30
+const SPEED_NORMAL : int = 40
+const SPEED_ANGRY : int = 60
 var speed : int = SPEED_NORMAL
 
 var emote_sleepy : Resource = load("res://assets/emotes/emote_sleeps.png")
@@ -23,6 +23,7 @@ var collision
 @onready var emote_timer : Node = $EmoteTimer
 @onready var nav_agent : Node = $NavigationAgent2D
 @onready var new_path_timer : Node = $NewPathTimer
+@onready var game_start_delay_timer : Timer = $GameStartDelayTimer
 
 signal signal_game_over
 
@@ -30,23 +31,25 @@ func _ready() -> void:
 	animation_tree.active = true
 	emote.hide()
 	signal_game_over.connect(get_parent().game_over)
+	game_start_delay_timer.start()
 
 func _physics_process(delta) -> void:
-	if !Global.win:
-		var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity = dir * speed
-		move_and_slide()
-		
-		# Get collision info
-		for i in get_slide_collision_count():
-			collision = get_slide_collision(i)
-			# If baby collides with cat...
-			if "FatCat" in collision.get_collider().name:
-				# Stop baby from moving
-				signal_game_over.emit()
-				Global.game_over = true
-				nav_agent.navigation_layers = 0
-		
+	if !Global.win && Global.game_start:
+		if game_start_delay_timer.is_stopped():
+			var dir = to_local(nav_agent.get_next_path_position()).normalized()
+			velocity = dir * speed
+			move_and_slide()
+			
+			# Get collision info
+			for i in get_slide_collision_count():
+				collision = get_slide_collision(i)
+				# If baby collides with cat...
+				if "FatCat" in collision.get_collider().name:
+					# Stop baby from moving
+					signal_game_over.emit()
+					Global.game_over = true
+					nav_agent.navigation_layers = 0
+			
 		play_move_animations()
 
 func make_path() -> void:

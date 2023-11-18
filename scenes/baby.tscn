@@ -388,6 +388,10 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
+[node name="GameStartDelayTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3yn75")

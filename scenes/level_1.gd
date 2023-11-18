@@ -9,15 +9,22 @@ extends Node
 
 @onready var player_light : PointLight2D = $FatCat/PlayerLight
 @onready var shadow_light : PointLight2D = $FatCat/ShadowLight
+@onready var dim_light : CanvasModulate = $CanvasModulate
+@onready var dim_light_timer : Timer = $RoomLightTimer
+@onready var light_switch : AudioStreamPlayer = $LightSwitch
 
 var run_once_counter : int = 0
-var player_light_raw : float
+
+func _ready() -> void:
+	Global.game_start = false
+	dim_light_timer.start()
 
 func _process(delta):
-	player_light.texture_scale -= 0.01 * delta
-	player_light.texture_scale = clamp(player_light.texture_scale, 0.0, 1.0)
-	shadow_light.texture_scale -= 0.01 * delta
-	shadow_light.texture_scale = clamp(shadow_light.texture_scale, 0.0, 1.0)
+	if Global.game_start:
+		player_light.texture_scale -= 0.01 * delta
+		player_light.texture_scale = clamp(player_light.texture_scale, 0.0, 1.0)
+		shadow_light.texture_scale -= 0.01 * delta
+		shadow_light.texture_scale = clamp(shadow_light.texture_scale, 0.0, 1.0)
 
 func game_over():
 	run_once_counter += 1
@@ -37,3 +44,9 @@ func _unhandled_input(_event) -> void:
 			get_tree().paused = true
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			pause_menu.show()
+
+func _on_room_light_timer_timeout():
+	light_switch.play()
+	dim_light.show()
+	player_light.show()
+	Global.game_start = true
