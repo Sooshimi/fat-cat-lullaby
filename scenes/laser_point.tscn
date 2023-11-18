@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh3ir1urfmadp"]
+
+[ext_resource type="Texture2D" uid="uid://drubsbaksksau" path="res://assets/ui/laser_point.png" id="1_p25lm"]
+[ext_resource type="Script" path="res://scenes/laser_point.gd" id="2_ma73w"]
+[ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="3_k4gup"]
+
+[node name="LaserPoint" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_p25lm")
+script = ExtResource("2_ma73w")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.8
+texture = ExtResource("3_k4gup")
+texture_scale = 0.03
