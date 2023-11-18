@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=42 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -21,10 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://c7quonp4kgl4n" path="res://scenes/items/furniture/horse.tscn" id="19_dvn0x"]
 [ext_resource type="PackedScene" uid="uid://kpexsubl1ucm" path="res://scenes/items/toy_croco_xylo.tscn" id="20_2a4ju"]
 [ext_resource type="PackedScene" uid="uid://bbs3e114mheay" path="res://scenes/items/furniture/beach_ball.tscn" id="20_jcckc"]
+[ext_resource type="AudioStream" uid="uid://ddsdswm67dwm7" path="res://audio/music/clav_lullaby.wav" id="20_kn8io"]
+[ext_resource type="AudioStream" uid="uid://b4uxlvgvbh4ed" path="res://audio/music/spooky_loop.wav" id="21_b112b"]
 [ext_resource type="PackedScene" uid="uid://khey0kn2cdsn" path="res://scenes/items/furniture/empty_shelf.tscn" id="21_cp4qk"]
 [ext_resource type="PackedScene" uid="uid://cp08c0r023ng6" path="res://scenes/items/star_yellow.tscn" id="21_ecawh"]
 [ext_resource type="PackedScene" uid="uid://bme1twe8fo2i5" path="res://scenes/items/star_blue.tscn" id="22_cnuea"]
 [ext_resource type="PackedScene" uid="uid://stbt8u7l1e4w" path="res://scenes/items/furniture/wardrobe_tall.tscn" id="22_numcx"]
+[ext_resource type="AudioStream" uid="uid://1v42s08ymgdh" path="res://audio/music/lullaby_no_choir.wav" id="23_6ra7t"]
 [ext_resource type="PackedScene" uid="uid://yu61bci02qnb" path="res://scenes/items/furniture/tv.tscn" id="23_lgab1"]
 [ext_resource type="PackedScene" uid="uid://dtexwmu7kd14r" path="res://scenes/items/furniture/plant_1.tscn" id="24_hrias"]
 [ext_resource type="PackedScene" uid="uid://blb7ekyf7iyvm" path="res://scenes/items/furniture/plant_2.tscn" id="25_p56g8"]
@@ -132,20 +135,31 @@ position = Vector2(294, -93)
 position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(113, 330)
+position = Vector2(251, 250)
+music = ExtResource("20_kn8io")
 piano = NodePath("../Piano")
-key_1 = "f1"
-key_2 = "eb1"
-key_3 = "g1"
+key_1 = "c1"
+key_2 = "f1"
+key_3 = "bb1"
 baby_emotion_trigger = "angry"
 
 [node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
-position = Vector2(146, 52)
+position = Vector2(185, 251)
+music = ExtResource("21_b112b")
 piano = NodePath("../Piano")
 key_1 = "e1"
 key_2 = "g1"
 key_3 = "b1"
 baby_emotion_trigger = "sleepy"
+
+[node name="CrocoXylo2" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
+position = Vector2(87, 254)
+music = ExtResource("23_6ra7t")
+piano = NodePath("../Piano")
+key_1 = "ab1"
+key_2 = "a1"
+key_3 = "cs2"
+baby_emotion_trigger = "normal"
 
 [node name="StarYellow" parent="." node_paths=PackedStringArray("player") instance=ExtResource("21_ecawh")]
 position = Vector2(267, -46)
@@ -184,7 +198,7 @@ position = Vector2(287, 332)
 player = NodePath("../FatCat")
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
-position = Vector2(182, 259)
+position = Vector2(183, 299)
 
 [node name="PlayerLight" type="PointLight2D" parent="FatCat"]
 energy = 0.8

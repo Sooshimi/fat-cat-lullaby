@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dehdcm20oqkgn"
-path="res://.godot/imported/incredibly_creepy_synth_loop.wav-e49790eea8d5b72a7ce0392d918a9db5.sample"
+path="res://.godot/imported/creepy_synth_loop.wav-001670131f8249ddb496ffd07540e089.sample"
 
 [deps]
 
-source_file="res://audio/music/incredibly_creepy_synth_loop.wav"
-dest_files=["res://.godot/imported/incredibly_creepy_synth_loop.wav-e49790eea8d5b72a7ce0392d918a9db5.sample"]
+source_file="res://audio/music/creepy_synth_loop.wav"
+dest_files=["res://.godot/imported/creepy_synth_loop.wav-001670131f8249ddb496ffd07540e089.sample"]
 
 [params]
 
