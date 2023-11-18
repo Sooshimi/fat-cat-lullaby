@@ -6,7 +6,3 @@
 script = ExtResource("1_03pcn")
 
 [node name="ToyMusic" type="AudioStreamPlayer" parent="."]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
