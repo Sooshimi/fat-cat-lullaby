@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://btvjpf7noghhc" path="res://scenes/items/furniture/pillow_yellow.tscn" id="28_63xr4"]
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
 [ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
-[ext_resource type="PackedScene" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
+[ext_resource type="PackedScene" uid="uid://cf04rcspxutvd" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
