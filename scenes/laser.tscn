@@ -9,6 +9,6 @@ light_mode = 1
 self_modulate = Color(1, 1, 1, 0.286275)
 material = SubResource("CanvasItemMaterial_bgm0k")
 width = 1.0
-default_color = Color(0.975665, 1.55399e-06, 0, 1)
+default_color = Color(0.976471, 0, 0, 0.662745)
 round_precision = 4
 script = ExtResource("1_dwcdn")
