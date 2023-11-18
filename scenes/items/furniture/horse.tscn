@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7quonp4kgl4n"]
+[gd_scene load_steps=2 format=3 uid="uid://c7quonp4kgl4n"]
 
 [ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_mecj3"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
-radius = 5.33333
-height = 16.0
 
 [node name="Horse" type="StaticBody2D"]
 scale = Vector2(2, 2)
@@ -16,8 +12,5 @@ texture = ExtResource("1_mecj3")
 region_enabled = true
 region_rect = Rect2(541, 423, 29, 25)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 1.33333)
-rotation = 1.5708
-scale = Vector2(1.5, 1.5)
-shape = SubResource("CapsuleShape2D_qvmu2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -1.5, -8, 8.5, -6.5, 10, 6.5, 10, 12, 10, 13.5, 8, 14.5, -1, 10.5, -7.5, -1.5, -7.5, -9.5, -11.5, -12, -11, -14, -7, -13.5, -4, -11, -2)

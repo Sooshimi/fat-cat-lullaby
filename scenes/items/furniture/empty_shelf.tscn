@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://khey0kn2cdsn"]
+[gd_scene load_steps=2 format=3 uid="uid://khey0kn2cdsn"]
 
 [ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_hs05j"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
-radius = 16.0
-height = 54.0
 
 [node name="EmptyShelf" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -16,6 +12,5 @@ texture = ExtResource("1_hs05j")
 region_enabled = true
 region_rect = Rect2(16, 104, 32, 56)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_qvmu2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -27.3333, -15.3333, -24.6667, -15.3333, 23.3333, -12.6667, 26.6667, 12.6667, 26.6667, 15.3333, 24, 15.3333, -24.6667, 13.3333, -27.3333)

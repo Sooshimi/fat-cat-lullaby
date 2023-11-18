@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxbakdlk40lej"]
+[gd_scene load_steps=2 format=3 uid="uid://dxbakdlk40lej"]
 
 [ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_y2kbs"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
-radius = 16.3333
-height = 48.0
 
 [node name="BookshelfShort" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -12,11 +8,10 @@ collision_layer = 16
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.33333, 0)
 texture = ExtResource("1_y2kbs")
 region_enabled = true
 region_rect = Rect2(400, 61, 48, 35)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_qvmu2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23.3333, -14.6667, -11.3333, -16.6667, 11.3333, -16.6667, 24.6667, -13.3333, 24.6667, 13.3333, 19.3333, 16, -20, 16, -23.3333, 12.6667)

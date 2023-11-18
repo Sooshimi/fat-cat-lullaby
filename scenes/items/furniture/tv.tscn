@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://yu61bci02qnb"]
+[gd_scene load_steps=2 format=3 uid="uid://yu61bci02qnb"]
 
 [ext_resource type="Texture2D" uid="uid://br54ba7u5bfxx" path="res://assets/world/atlas_32x.png" id="1_ogiqu"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvmu2"]
-radius = 16.0
-height = 52.0
 
 [node name="TV" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -16,5 +12,5 @@ texture = ExtResource("1_ogiqu")
 region_enabled = true
 region_rect = Rect2(288, 396, 32, 52)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_qvmu2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -26, -16, -19.3333, -16, 22, -13.3333, 26, 14, 26, 16, 22.6667, 16, -20, 10, -26)
