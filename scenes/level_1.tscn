@@ -68,9 +68,6 @@ game_over_meow = NodePath("GameOverMeow")
 game_over_laugh = NodePath("GameOverLaugh")
 player = NodePath("FatCat")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0588235, 0.0588235, 0.0588235, 1)
-
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
 position = Vector2(-165, -137)
 
@@ -246,6 +243,9 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(174, 571)
 
 [node name="LaserPoint" parent="." instance=ExtResource("25_x1uy3")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
