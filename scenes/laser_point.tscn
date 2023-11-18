@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vf3o78sc1ww1" path="res://assets/world/2d_lights_and_shadows_neutral_point_light.png" id="3_k4gup"]
 
 [node name="LaserPoint" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0.843137)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_p25lm")
 script = ExtResource("2_ma73w")
@@ -12,4 +13,4 @@ script = ExtResource("2_ma73w")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.8
 texture = ExtResource("3_k4gup")
-texture_scale = 0.03
+texture_scale = 0.02
