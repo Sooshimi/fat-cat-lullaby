@@ -53,8 +53,6 @@ func _physics_process(delta) -> void:
 					animation_tree["parameters/conditions/roll_to_slide"] = true
 					animation_tree["parameters/conditions/slide_to_idle"] = false
 					animation_tree["parameters/conditions/slide_to_roll"] = false
-					# Turn player collision box back on after landing
-					collision_shape.disabled = false
 					is_rolling = false
 					is_grounded = true
 					# Start window where jump action is allowed shortly during slide
@@ -65,6 +63,7 @@ func _physics_process(delta) -> void:
 				is_jumping:
 					animation_tree["parameters/conditions/land"] = true
 					animation_tree["parameters/conditions/jump"] = false
+					# Turn player collision box back on after landing
 					collision_shape.disabled = false
 					is_rolling = false
 					is_grounded = true
