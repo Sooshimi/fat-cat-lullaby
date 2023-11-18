@@ -9,8 +9,8 @@ var allow_jump : bool
 var collision
 var start_roll_position : Vector2
 var start_jump_position : Vector2
-var max_roll_length : int = 70
-var max_jump_length : int = 60
+var max_roll_length : int = 80
+var max_jump_length : int = 80
 
 @onready var roll_cooldown : Node = $RollCooldown
 @onready var jump_window : Node = $JumpWindow

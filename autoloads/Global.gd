@@ -21,7 +21,6 @@ func get_scene():
 	return current_scene
 
 func check_key_order() -> void:
-	print(keys_played)
 	# Check every key pressed by player
 	for i in keys_played.size():
 		# Get the string of the actual key played
