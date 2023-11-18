@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf04rcspxutvd"]
+[gd_scene load_steps=4 format=3 uid="uid://b2oik5ob7b3am"]
 
 [ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_kq33o"]
 [ext_resource type="Script" path="res://scenes/items/toy_colour_reveal.gd" id="1_lg28m"]
@@ -8,7 +8,6 @@ radius = 8.06226
 
 [node name="ToyColourReveal" type="Area2D"]
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_lg28m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
