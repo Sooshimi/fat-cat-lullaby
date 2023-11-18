@@ -267,5 +267,4 @@ volume_db = -5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("30_ngldc")
-volume_db = -5.0
 autoplay = true
