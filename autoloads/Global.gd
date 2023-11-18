@@ -4,8 +4,8 @@ var game_over : bool = false
 var win : bool = false
 var current_scene
 
-# ["B0", "C1", "Cs1", "D1", "Eb1", "E1", "F1", "Fs1", "G1", "Ab1", "A1",\
-#  "Bb1", "B1", "C2", "Cs2", "D2", "Eb2", "E2"]
+#("c0", "c1", "cs1", "d1", "eb1", "e1", "f1", "fs1", "g1", "ab1",\
+#"a1", "bb1", "b1", "c2", "cs2", "d2", "eb2", "e2")
 
 var keys_played : Array = []
 var lullaby : Array = ["e1", "g1", "b1"]

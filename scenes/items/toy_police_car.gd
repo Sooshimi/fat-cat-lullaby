@@ -2,7 +2,6 @@ extends RigidBody2D
 
 @onready var note_timer : Node = $NoteTimer
 @onready var baby : CharacterBody2D = get_parent().get_node("Baby")
-@onready var audio_player : AudioStreamPlayer = $AudioStreamPlayer
 @export var music : Resource
 @export var piano : Node
 
@@ -22,7 +21,6 @@ var tune_strings : Array
 
 func _ready() -> void:
 	load_keys()
-	audio_player.stream = music
 
 func load_keys() -> void:
 	var key_array : Array = [key_1, key_2, key_3]
@@ -37,7 +35,7 @@ func load_keys() -> void:
 
 func _on_area_2d_body_entered(_body) -> void:
 	baby.trigger_emote(baby_emotion_trigger)
-	audio_player.play()
+	AudioScene.play_toy_music(music)
 	
 	for i in tune_load.size():
 		note_timer.start()

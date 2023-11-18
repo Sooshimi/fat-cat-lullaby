@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf04rcspxutvd"]
+
+[ext_resource type="Texture2D" uid="uid://7wbjov0a4j6h" path="res://assets/world/Interior.png" id="1_kq33o"]
+[ext_resource type="Script" path="res://scenes/items/toy_colour_reveal.gd" id="1_lg28m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sre7l"]
+radius = 8.06226
+
+[node name="ToyColourReveal" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_lg28m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kq33o")
+region_enabled = true
+region_rect = Rect2(96, 416, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sre7l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

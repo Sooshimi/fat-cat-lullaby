@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://autoloads/Global.gd"
+Audio="*res://autoloads/Audio.gd"
+AudioScene="*res://autoloads/audio_scene.tscn"
 
 [display]
 

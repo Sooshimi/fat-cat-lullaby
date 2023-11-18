@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=43 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://btvjpf7noghhc" path="res://scenes/items/furniture/pillow_yellow.tscn" id="28_63xr4"]
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
 [ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
+[ext_resource type="PackedScene" uid="uid://cf04rcspxutvd" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxkst"]
 shader = ExtResource("6_k6mst")
@@ -135,7 +136,7 @@ position = Vector2(294, -93)
 position = Vector2(185, 144)
 
 [node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
-position = Vector2(251, 250)
+position = Vector2(318, 266)
 music = ExtResource("20_kn8io")
 piano = NodePath("../Piano")
 key_1 = "c1"
@@ -144,7 +145,7 @@ key_3 = "bb1"
 baby_emotion_trigger = "angry"
 
 [node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
-position = Vector2(185, 251)
+position = Vector2(186, 261)
 music = ExtResource("21_b112b")
 piano = NodePath("../Piano")
 key_1 = "e1"
@@ -153,7 +154,7 @@ key_3 = "b1"
 baby_emotion_trigger = "sleepy"
 
 [node name="CrocoXylo2" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
-position = Vector2(87, 254)
+position = Vector2(53, 266)
 music = ExtResource("23_6ra7t")
 piano = NodePath("../Piano")
 key_1 = "ab1"
@@ -192,6 +193,10 @@ player = NodePath("../FatCat")
 [node name="StarBlue4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
 position = Vector2(468, 498)
 player = NodePath("../FatCat")
+
+[node name="ToyColourReveal" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("38_jn4n1")]
+position = Vector2(143, 288)
+piano = NodePath("../Piano")
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(287, 332)
