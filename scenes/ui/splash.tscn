@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3scqnv7o41lj"]
+[gd_scene load_steps=5 format=3 uid="uid://c3scqnv7o41lj"]
 
 [ext_resource type="Script" path="res://scenes/ui/splash.gd" id="1_1bbwg"]
 [ext_resource type="Texture2D" uid="uid://cdpqoitgpmjpu" path="res://assets/ui/63-Cats.png" id="1_7yk7y"]
 [ext_resource type="Texture2D" uid="uid://djev3c8jtv0yw" path="res://assets/ui/archnem.png" id="2_4bhff"]
+[ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="2_eike2"]
 
 [node name="Splash" type="Control"]
 layout_mode = 3
@@ -27,17 +28,25 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 114.0
-offset_top = 54.0
-offset_right = 475.0
-offset_bottom = 1108.0
+offset_left = 109.0
+offset_top = 24.0
+offset_right = 575.0
+offset_bottom = 1537.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.18)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 120
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_eike2")
+theme_override_font_sizes/font_size = 80
+text = "Godot Wild Jam #63"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
