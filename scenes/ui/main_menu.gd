@@ -38,6 +38,7 @@ func _on_play_mouse_entered():
 	button_hover_sound.play()
 
 func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://scenes/ui/credits.tscn")
 	button_click_sound.play()
 
 func _on_credits_mouse_entered():

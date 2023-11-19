@@ -46,16 +46,16 @@ _data = {
 "play": SubResource("Animation_ptwxq")
 }
 
-[sub_resource type="Gradient" id="Gradient_3xpfx"]
+[sub_resource type="Gradient" id="Gradient_emtil"]
 offsets = PackedFloat32Array(0, 0.770968, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.848387, 0.848387, 0.848387, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_5408f"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q5f8o"]
 frequency = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_63m4w"]
-color_ramp = SubResource("Gradient_3xpfx")
-noise = SubResource("FastNoiseLite_5408f")
+color_ramp = SubResource("Gradient_emtil")
+noise = SubResource("FastNoiseLite_q5f8o")
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "quit_button", "button_click_sound", "button_hover_sound", "fade_out_timer", "canvas", "music")]
 layout_mode = 3

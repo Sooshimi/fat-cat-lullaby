@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck1vbdan7ef38"]
+
+[ext_resource type="Script" path="res://scenes/ui/credits.gd" id="1_g8pix"]
+[ext_resource type="Texture2D" uid="uid://octxogcfgnxo" path="res://assets/world/space_bg.png" id="1_gohcc"]
+[ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="3_v3g2c"]
+[ext_resource type="AudioStream" uid="uid://cnifoxg6nw4a2" path="res://audio/ui/pluck_002.ogg" id="4_ud4eo"]
+[ext_resource type="AudioStream" uid="uid://dpfgdpvykmo1h" path="res://audio/ui/pluck_001.ogg" id="5_td24q"]
+
+[sub_resource type="Gradient" id="Gradient_3xpfx"]
+offsets = PackedFloat32Array(0, 0.770968, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.848387, 0.848387, 0.848387, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5408f"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5aqmh"]
+color_ramp = SubResource("Gradient_3xpfx")
+noise = SubResource("FastNoiseLite_5408f")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g8pix")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gohcc")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Developer
+Soosh
+
+Art, Animation & Music
+Ramazir
+
+Borrowed art/audio assets from:
+NoiseCollector, klankbeeld, DreamyPixelArt, Gif, LimeZu, Kennedy"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_v3g2c")
+text = "Main Menu"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Grain" type="TextureRect" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0.0313726)
+offset_right = 512.0
+offset_bottom = 512.0
+mouse_filter = 2
+texture = SubResource("NoiseTexture2D_5aqmh")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ud4eo")
+volume_db = -10.0
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_td24q")
+volume_db = -10.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/MarginContainer/MainMenu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/MainMenu" to="." method="_on_main_menu_pressed"]

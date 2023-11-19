@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://brp00iynn3pio"]
+[gd_scene load_steps=6 format=3 uid="uid://brp00iynn3pio"]
 
 [ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="1_11v7m"]
 [ext_resource type="Script" path="res://scenes/ui/win_menu.gd" id="1_h750g"]
 [ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="3_7w6q5"]
+[ext_resource type="AudioStream" uid="uid://cnifoxg6nw4a2" path="res://audio/ui/pluck_002.ogg" id="4_rs0cn"]
+[ext_resource type="AudioStream" uid="uid://dpfgdpvykmo1h" path="res://audio/ui/pluck_001.ogg" id="5_t0lxd"]
 
 [node name="WinMenu" type="Control"]
 layout_mode = 3
@@ -70,5 +72,15 @@ layout_mode = 2
 theme = ExtResource("1_11v7m")
 text = "Quit"
 
+[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rs0cn")
+volume_db = -10.0
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t0lxd")
+volume_db = -10.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/MainMenu" to="." method="_on_main_menu_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Quit" to="." method="_on_quit_pressed"]
