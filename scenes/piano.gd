@@ -125,7 +125,8 @@ func _emit_key_played() -> void:
 	key_played.emit()
 
 # Triggers piano keys to play key sound, and show key colour and light up
-func trigger_piano_key(key:String, key_pressed:bool = true, time:float = 1.0, light:bool = true) -> void:
+func trigger_piano_key(key:String, key_pressed:bool = true, time:float = 1.0,\
+light:bool = true, colour_button_pressed:bool = false) -> void:
 	for note in key_dictionary:
 		if note == key:
 			# Only run the below if a key is actually pressed. This func is
@@ -134,7 +135,9 @@ func trigger_piano_key(key:String, key_pressed:bool = true, time:float = 1.0, li
 				Global.keys_played.append(key)
 				key_dictionary[note]["sound"].play()
 				_emit_key_played()
+			
 			key_dictionary[note]["colour_key"].show()
+			
 			if light:
 				key_dictionary[note]["light_key"].show()
 			
