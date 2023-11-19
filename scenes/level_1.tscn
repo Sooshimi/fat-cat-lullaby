@@ -64,7 +64,7 @@ frequency = 1.0
 color_ramp = SubResource("Gradient_qnfct")
 noise = SubResource("FastNoiseLite_ahm4g")
 
-[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow", "game_over_laugh", "player")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("pause_menu", "game_over_menu", "win_menu", "game_over_meow", "game_over_laugh", "player", "baby")]
 script = ExtResource("1_ddu6q")
 pause_menu = NodePath("CanvasLayer/PauseMenu")
 game_over_menu = NodePath("CanvasLayer/GameOver")
@@ -72,6 +72,7 @@ win_menu = NodePath("CanvasLayer/WinMenu")
 game_over_meow = NodePath("GameOverMeow")
 game_over_laugh = NodePath("GameOverLaugh")
 player = NodePath("FatCat")
+baby = NodePath("Baby")
 
 [node name="Bedroom" parent="." instance=ExtResource("1_6ynhn")]
 position = Vector2(-165, -137)
@@ -188,7 +189,7 @@ position = Vector2(468, 498)
 player = NodePath("../FatCat")
 
 [node name="StarBlue5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_cnuea")]
-position = Vector2(342, 386)
+position = Vector2(354, 444)
 player = NodePath("../FatCat")
 
 [node name="ToyColourReveal" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("38_jn4n1")]
@@ -220,6 +221,15 @@ baby_emotion_trigger = "angry"
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
 position = Vector2(463, 252)
 player = NodePath("../FatCat")
+
+[node name="BabyLight" type="PointLight2D" parent="Baby"]
+visible = false
+energy = 0.8
+range_item_cull_mask = 3
+shadow_filter = 1
+shadow_filter_smooth = 2.0
+texture = ExtResource("4_qx8n5")
+texture_scale = 0.9
 
 [node name="FatCat" parent="." instance=ExtResource("1_tss6p")]
 position = Vector2(183, 299)
@@ -291,8 +301,20 @@ color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 wait_time = 2.0
 one_shot = true
 
+[node name="GameOverBlackFadeTimer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("34_kmw5a")]
 visible = false

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-const SPEED_SLEEPY : int = 35
-const SPEED_NORMAL : int = 40
-const SPEED_ANGRY : int = 60
+const SPEED_SLEEPY : int = 0
+const SPEED_NORMAL : int = 0
+const SPEED_ANGRY : int = 0
 var speed : int = SPEED_NORMAL
 
 var emote_sleepy : Resource = load("res://assets/emotes/emote_sleeps.png")
@@ -91,7 +91,7 @@ func _on_timer_timeout() -> void:
 	make_path()
 	set_reaction_time(current_reaction_time)
 
-func trigger_emote(expression:String) -> void:
+func trigger_emote(expression:String, stop_timer:bool = false) -> void:
 	# Trigger emote after emote cooldown
 	if emote_timer.is_stopped():
 		current_expression = expression
@@ -100,17 +100,18 @@ func trigger_emote(expression:String) -> void:
 		if expression == "sleepy":
 			current_reaction_time = SLEEPY_REACTION_TIME
 			speed = SPEED_SLEEPY
-			set_emote(emote_sleepy)
+			set_emote(emote_sleepy, stop_timer)
 		elif expression == "angry":
 			current_reaction_time = ANGRY_REACTION_TIME
 			speed = SPEED_ANGRY
-			set_emote(emote_angry)
+			set_emote(emote_angry, stop_timer)
 
 # Changes and shows emote icon, and start emote cooldown timer
-func set_emote(emote_icon) -> void:
+func set_emote(emote_icon, stop_timer:bool = false) -> void:
 	emote.texture = emote_icon
 	emote.show()
-	emote_timer.start()
+	if !stop_timer:
+		emote_timer.start()
 
 # Set baby's speed and reaction time back to normal after a short period
 func _on_emote_timer_timeout():

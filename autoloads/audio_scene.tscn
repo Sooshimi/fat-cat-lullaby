@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcr6dxhp5jj7j"]
+[gd_scene load_steps=3 format=3 uid="uid://dcr6dxhp5jj7j"]
 
 [ext_resource type="Script" path="res://autoloads/Audio.gd" id="1_03pcn"]
+[ext_resource type="AudioStream" uid="uid://cv3bpvgpblxnd" path="res://audio/music/lullaby_full_arrangement.wav" id="2_jqjvl"]
 
 [node name="AudioScene" type="Node"]
 script = ExtResource("1_03pcn")
 
 [node name="ToyMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jqjvl")

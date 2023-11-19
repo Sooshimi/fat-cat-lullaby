@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://du8n2u6bk366n"]
+[gd_scene load_steps=61 format=3 uid="uid://du8n2u6bk366n"]
 
 [ext_resource type="Script" path="res://scenes/baby.gd" id="1_0363r"]
 [ext_resource type="Texture2D" uid="uid://bf8arr2oqkhox" path="res://assets/characters/baby_walk_4_direction.png" id="2_3fbd1"]
@@ -441,10 +441,26 @@ tracks/1/keys = {
 "values": [PackedVector2Array(-3, 10, -1, 10, -1, 9, 2, 6, -3, 6), PackedVector2Array(-3, 9, 0.5, 9, 2, 6, -3, 6), PackedVector2Array(0, 9, 2, 9, 2, 6, -3, 6), PackedVector2Array(-3, 9, 0.5, 9, 2, 6, -3, 6)]
 }
 
+[sub_resource type="Animation" id="Animation_nn7eg"]
+resource_name = "idle_down_sleepy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [36]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3yn75"]
 _data = {
 "RESET": SubResource("Animation_76xko"),
 "idle_down_neutral": SubResource("Animation_vg34r"),
+"idle_down_sleepy": SubResource("Animation_nn7eg"),
 "idle_left_neutral": SubResource("Animation_cnejq"),
 "idle_right_neutral": SubResource("Animation_qh8pk"),
 "idle_up": SubResource("Animation_ss6ds"),
@@ -480,6 +496,29 @@ blend_point_1/pos = Vector2(0, -1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_bkt7n")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_o4ikc")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g3ob4"]
+animation = &"idle_down_sleepy"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_78ow8"]
+animation = &"idle_down_sleepy"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o3yji"]
+animation = &"idle_down_sleepy"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f6arr"]
+animation = &"idle_down_sleepy"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_heks4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_g3ob4")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_78ow8")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_o3yji")
+blend_point_2/pos = Vector2(-1, -0.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_f6arr")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
@@ -581,9 +620,13 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_icpge"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hbfkx"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l461e"]
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_i1smh")
 states/Idle/position = Vector2(314, 84.75)
+states/Idle_Sleepy/node = SubResource("AnimationNodeBlendSpace2D_heks4")
+states/Idle_Sleepy/position = Vector2(218.427, 16.5675)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_jknsj")
 states/Run/position = Vector2(483, 85.125)
 states/Run_Angry/node = SubResource("AnimationNodeBlendSpace2D_2cso0")
@@ -591,8 +634,8 @@ states/Run_Angry/position = Vector2(386.125, 162)
 states/Run_Sleepy/node = SubResource("AnimationNodeBlendSpace2D_0gni4")
 states/Run_Sleepy/position = Vector2(387, 6)
 states/Start/position = Vector2(133, 85.5)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eob6d"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_kumak"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_4gson"), "Run", "Run_Sleepy", SubResource("AnimationNodeStateMachineTransition_tehx4"), "Run_Sleepy", "Run", SubResource("AnimationNodeStateMachineTransition_gocc8"), "Run_Angry", "Run", SubResource("AnimationNodeStateMachineTransition_5bmvj"), "Run", "Run_Angry", SubResource("AnimationNodeStateMachineTransition_wqbpp"), "Idle", "Run_Sleepy", SubResource("AnimationNodeStateMachineTransition_n7fsq"), "Run_Sleepy", "Idle", SubResource("AnimationNodeStateMachineTransition_7lx2k"), "Idle", "Run_Angry", SubResource("AnimationNodeStateMachineTransition_snma0"), "Run_Angry", "Idle", SubResource("AnimationNodeStateMachineTransition_icpge")]
-graph_offset = Vector2(-8, -12)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_eob6d"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_kumak"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_4gson"), "Run", "Run_Sleepy", SubResource("AnimationNodeStateMachineTransition_tehx4"), "Run_Sleepy", "Run", SubResource("AnimationNodeStateMachineTransition_gocc8"), "Run_Angry", "Run", SubResource("AnimationNodeStateMachineTransition_5bmvj"), "Run", "Run_Angry", SubResource("AnimationNodeStateMachineTransition_wqbpp"), "Idle", "Run_Sleepy", SubResource("AnimationNodeStateMachineTransition_n7fsq"), "Run_Sleepy", "Idle", SubResource("AnimationNodeStateMachineTransition_7lx2k"), "Idle", "Run_Angry", SubResource("AnimationNodeStateMachineTransition_snma0"), "Run_Angry", "Idle", SubResource("AnimationNodeStateMachineTransition_icpge"), "Idle", "Idle_Sleepy", SubResource("AnimationNodeStateMachineTransition_hbfkx")]
+graph_offset = Vector2(-57.0725, -20.9325)
 
 [node name="Baby" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
 scale = Vector2(2, 2)
@@ -652,6 +695,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_l461e")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(2.08165e-12, 2.08165e-12)
+parameters/Idle_Sleepy/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0, 0)
 parameters/Run_Angry/blend_position = Vector2(0, 0)
 parameters/Run_Sleepy/blend_position = Vector2(2.08165e-12, 2.08165e-12)
