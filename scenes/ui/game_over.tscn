@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dufd5xc6bws0r"]
+[gd_scene load_steps=4 format=3 uid="uid://dufd5xc6bws0r"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over.gd" id="1_kbor2"]
 [ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="1_vvu3r"]
+[ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="3_80g5o"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -40,7 +41,9 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_vvu3r")
-text = "The cat was caught!"
+theme_override_fonts/font = ExtResource("3_80g5o")
+theme_override_font_sizes/font_size = 20
+text = "Baby won't let go."
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,25 +1,50 @@
-[gd_scene load_steps=12 format=3 uid="uid://voqe5n08ecce"]
+[gd_scene load_steps=14 format=3 uid="uid://voqe5n08ecce"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_xofwq"]
 [ext_resource type="Texture2D" uid="uid://octxogcfgnxo" path="res://assets/world/space_bg.png" id="2_2ebls"]
 [ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="2_rph22"]
-[ext_resource type="Shader" path="res://shaders/crt.gdshader" id="3_i8bmo"]
 [ext_resource type="AudioStream" uid="uid://dpfgdpvykmo1h" path="res://audio/ui/pluck_001.ogg" id="3_w4pil"]
+[ext_resource type="Texture2D" uid="uid://8eoyqyyqvyjp" path="res://assets/ui/key tutorial.png" id="4_8x2uc"]
 [ext_resource type="AudioStream" uid="uid://cnifoxg6nw4a2" path="res://audio/ui/pluck_002.ogg" id="4_f45x3"]
 [ext_resource type="AudioStream" uid="uid://w18egvfnm02x" path="res://audio/music/Plucky_melancholy_melody.wav" id="5_p3o6a"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8tfj"]
-shader = ExtResource("3_i8bmo")
-shader_parameter/screen_width = 640.0
-shader_parameter/screen_height = 640.0
-shader_parameter/BarrelPower = 1.02
-shader_parameter/color_bleeding = 1.2
-shader_parameter/bleeding_range_x = 0.9
-shader_parameter/bleeding_range_y = 0.9
-shader_parameter/lines_distance = 5.0
-shader_parameter/scan_size = 2.0
-shader_parameter/scanline_alpha = 0.9
-shader_parameter/lines_velocity = 1.0
+[sub_resource type="Animation" id="Animation_ptwxq"]
+resource_name = "play"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_md3xv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38k5h"]
+_data = {
+"RESET": SubResource("Animation_md3xv"),
+"play": SubResource("Animation_ptwxq")
+}
 
 [sub_resource type="Gradient" id="Gradient_3xpfx"]
 offsets = PackedFloat32Array(0, 0.770968, 1)
@@ -73,7 +98,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -82,9 +106,26 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_rph22")
+theme_override_colors/font_color = Color(0.882353, 0.694118, 0, 1)
 text = "Lullaby"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 170)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+position = Vector2(124.1, 85.93)
+scale = Vector2(0.94, 0.94)
+texture = ExtResource("4_8x2uc")
+hframes = 20
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+root_node = NodePath(".")
+libraries = {
+"": SubResource("AnimationLibrary_38k5h")
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -134,23 +175,6 @@ stream = ExtResource("5_p3o6a")
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CRTScreen" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_b8tfj")
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -180.0
-offset_right = 180.0
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Grain" type="TextureRect" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.0313726)

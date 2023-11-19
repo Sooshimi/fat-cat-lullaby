@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brp00iynn3pio"]
+[gd_scene load_steps=4 format=3 uid="uid://brp00iynn3pio"]
 
 [ext_resource type="Theme" uid="uid://duu1dtcvn0xm5" path="res://assets/themes/my_theme.tres" id="1_11v7m"]
 [ext_resource type="Script" path="res://scenes/ui/win_menu.gd" id="1_h750g"]
+[ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="3_7w6q5"]
 
 [node name="WinMenu" type="Control"]
 layout_mode = 3
@@ -40,7 +41,9 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_11v7m")
-text = "The baby fell asleep!"
+theme_override_fonts/font = ExtResource("3_7w6q5")
+theme_override_font_sizes/font_size = 20
+text = "The baby dozed off."
 horizontal_alignment = 1
 vertical_alignment = 1
 

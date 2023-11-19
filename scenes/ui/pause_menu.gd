@@ -1,7 +1,12 @@
 extends Control
 
+@onready var animation : AnimationPlayer = $MarginContainer/VBoxContainer/MarginContainer2/AnimationPlayer
+
 func _ready() -> void:
 	hide()
+
+func _process(delta) -> void:
+	animation.play("play")
 
 func _on_continue_pressed() -> void:
 	get_tree().paused = false

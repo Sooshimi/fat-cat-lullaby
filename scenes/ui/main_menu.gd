@@ -7,6 +7,7 @@ extends Control
 @export var fade_out_timer : Timer
 @export var canvas : CanvasModulate
 @export var music : AudioStreamPlayer
+@onready var animation : AnimationPlayer = $MarginContainer/VBoxContainer/MarginContainer2/AnimationPlayer
 
 var play_pressed : bool = false
 
@@ -14,6 +15,8 @@ func _process(delta):
 	if play_pressed:
 		canvas.color = lerp(canvas.color, Color(0,0,0,1), 4 * delta)
 		music.volume_db = lerp(music.volume_db, -80.0, 0.8 * delta)
+	
+	animation.play("play")
 
 func _on_play_pressed() -> void:
 	button_click_sound.play()

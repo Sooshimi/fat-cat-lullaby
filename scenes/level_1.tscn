@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=44 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
 [ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
 [ext_resource type="PackedScene" uid="uid://bpxejuqhf6oy0" path="res://scenes/ui/ui.tscn" id="34_kmw5a"]
+[ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="35_0mwbw"]
 [ext_resource type="PackedScene" uid="uid://b2oik5ob7b3am" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
 [ext_resource type="AudioStream" uid="uid://cc1tt6beono2e" path="res://audio/sfx/switch_001.ogg" id="39_eg0of"]
 
@@ -302,6 +303,22 @@ unique_name_in_owner = true
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("11_64s1c")]
 
 [node name="WinMenu" parent="CanvasLayer" instance=ExtResource("12_c4k5a")]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.847059)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("35_0mwbw")
+theme_override_font_sizes/font_size = 15
+text = "baby cam 02"
 
 [node name="GameOverMeow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_lpnpe")
