@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcr6dxhp5jj7j"]
+[gd_scene load_steps=3 format=3 uid="uid://dcr6dxhp5jj7j"]
 
 [ext_resource type="Script" path="res://autoloads/Audio.gd" id="1_03pcn"]
+[ext_resource type="AudioStream" uid="uid://w18egvfnm02x" path="res://audio/music/Plucky_melancholy_melody.wav" id="2_yokr7"]
 
 [node name="AudioScene" type="Node"]
 script = ExtResource("1_03pcn")
 
 [node name="ToyMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yokr7")

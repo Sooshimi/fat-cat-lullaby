@@ -11,6 +11,9 @@ extends Control
 
 var play_pressed : bool = false
 
+func _ready() -> void:
+	AudioScene.music.play()
+
 func _process(delta):
 	if play_pressed:
 		canvas.color = lerp(canvas.color, Color(0,0,0,1), 4 * delta)
@@ -19,6 +22,7 @@ func _process(delta):
 	animation.play("play")
 
 func _on_play_pressed() -> void:
+	AudioScene.music.stop()
 	button_click_sound.play()
 	fade_out_timer.start()
 	play_pressed = true
