@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3scqnv7o41lj"]
+
+[ext_resource type="Script" path="res://scenes/ui/splash.gd" id="1_1bbwg"]
+[ext_resource type="Texture2D" uid="uid://cdpqoitgpmjpu" path="res://assets/ui/63-Cats.png" id="1_7yk7y"]
+[ext_resource type="Texture2D" uid="uid://djev3c8jtv0yw" path="res://assets/ui/archnem.png" id="2_4bhff"]
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bbwg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = 54.0
+offset_right = 475.0
+offset_bottom = 1108.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.18, 0.18)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_7yk7y")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_4bhff")
+expand_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
