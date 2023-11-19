@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED_SLEEPY : int = 30
+const SPEED_SLEEPY : int = 35
 const SPEED_NORMAL : int = 40
 const SPEED_ANGRY : int = 60
 var speed : int = SPEED_NORMAL

@@ -95,10 +95,10 @@ position = Vector2(-114, -69)
 position = Vector2(-41, -52)
 
 [node name="Horse" parent="." instance=ExtResource("19_dvn0x")]
-position = Vector2(124, 17)
+position = Vector2(337, 26)
 
 [node name="Horse2" parent="." instance=ExtResource("19_dvn0x")]
-position = Vector2(473, 439)
+position = Vector2(345, 364)
 
 [node name="BeachBall" parent="." instance=ExtResource("20_jcckc")]
 position = Vector2(11, -44)
@@ -212,7 +212,7 @@ ui = NodePath("../CanvasLayer/UI")
 baby_emotion_trigger = "sleepy"
 
 [node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano", "ui") instance=ExtResource("20_2a4ju")]
-position = Vector2(434, 46)
+position = Vector2(284, 294)
 piano = NodePath("../Piano")
 ui = NodePath("../CanvasLayer/UI")
 baby_emotion_trigger = "angry"
