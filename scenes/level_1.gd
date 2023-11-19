@@ -12,6 +12,7 @@ extends Node
 @onready var dim_light : CanvasModulate = $CanvasModulate
 @onready var dim_light_timer : Timer = $RoomLightTimer
 @onready var light_switch : AudioStreamPlayer = $LightSwitch
+@onready var ui : Control = $CanvasLayer/UI
 
 var run_once_counter : int = 0
 
@@ -49,4 +50,5 @@ func _on_room_light_timer_timeout():
 	light_switch.play()
 	dim_light.show()
 	player_light.show()
+	ui.show()
 	Global.game_start = true

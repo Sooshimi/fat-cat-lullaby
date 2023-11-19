@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cwkocmqpyoa2o"]
+[gd_scene load_steps=46 format=3 uid="uid://cwkocmqpyoa2o"]
 
 [ext_resource type="PackedScene" uid="uid://pf2yp1p4e50e" path="res://scenes/bedroom.tscn" id="1_6ynhn"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_ddu6q"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://btvjpf7noghhc" path="res://scenes/items/furniture/pillow_yellow.tscn" id="28_63xr4"]
 [ext_resource type="PackedScene" uid="uid://dmfru4qj25m7" path="res://scenes/items/wall_decoration/window.tscn" id="29_spu6h"]
 [ext_resource type="AudioStream" uid="uid://5kr7jb0a3u05" path="res://audio/sfx/room-tone-windy-house-121220_00.wav" id="30_ngldc"]
+[ext_resource type="PackedScene" uid="uid://bpxejuqhf6oy0" path="res://scenes/ui/ui.tscn" id="34_kmw5a"]
 [ext_resource type="PackedScene" uid="uid://b2oik5ob7b3am" path="res://scenes/items/toy_colour_reveal.tscn" id="38_jn4n1"]
 [ext_resource type="AudioStream" uid="uid://cc1tt6beono2e" path="res://audio/sfx/switch_001.ogg" id="39_eg0of"]
 
@@ -152,37 +153,41 @@ position = Vector2(294, -93)
 [node name="Piano" parent="." instance=ExtResource("2_qla7i")]
 position = Vector2(185, 144)
 
-[node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("8_cu1mq")]
+[node name="ToyPoliceCar" parent="." node_paths=PackedStringArray("piano", "ui") instance=ExtResource("8_cu1mq")]
 position = Vector2(318, 266)
 music = ExtResource("20_kn8io")
 piano = NodePath("../Piano")
+ui = NodePath("../CanvasLayer/UI")
 key_1 = "c1"
 key_2 = "f1"
 key_3 = "bb1"
 baby_emotion_trigger = "angry"
 
-[node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
+[node name="CrocoXylo" parent="." node_paths=PackedStringArray("piano", "ui") instance=ExtResource("20_2a4ju")]
 position = Vector2(186, 261)
 music = ExtResource("22_5v86m")
 piano = NodePath("../Piano")
+ui = NodePath("../CanvasLayer/UI")
 key_1 = "e1"
 key_2 = "g1"
 key_3 = "b1"
 baby_emotion_trigger = "sleepy"
 
-[node name="CrocoXylo2" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
+[node name="CrocoXylo2" parent="." node_paths=PackedStringArray("piano", "ui") instance=ExtResource("20_2a4ju")]
 position = Vector2(53, 266)
 music = ExtResource("23_jyjfb")
 piano = NodePath("../Piano")
+ui = NodePath("../CanvasLayer/UI")
 key_1 = "ab1"
 key_2 = "a1"
 key_3 = "cs2"
 baby_emotion_trigger = "normal"
 
-[node name="CrocoXylo3" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("20_2a4ju")]
+[node name="CrocoXylo3" parent="." node_paths=PackedStringArray("piano", "ui") instance=ExtResource("20_2a4ju")]
 position = Vector2(84, 345)
 music = ExtResource("22_ysphc")
 piano = NodePath("../Piano")
+ui = NodePath("../CanvasLayer/UI")
 key_1 = "eb1"
 key_2 = "ab1"
 key_3 = "cs2"
@@ -300,6 +305,9 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("34_kmw5a")]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_ejdt2")]
 unique_name_in_owner = true

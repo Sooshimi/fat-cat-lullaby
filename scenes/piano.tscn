@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://diua0u2h7415x" path="res://assets/items/coloured_notes/Ab1 Gold.png" id="22_fmadf"]
 [ext_resource type="Texture2D" uid="uid://ba5uw02vkdbas" path="res://assets/items/coloured_notes/A1 yellow.png" id="24_bghx2"]
 [ext_resource type="AudioStream" uid="uid://dffmwkucirkav" path="res://audio/keys/bb1.ogg" id="25_6hp05"]
-[ext_resource type="Texture2D" uid="uid://dy625wdtocpas" path="res://assets/items/coloured_notes/Bb1 salmon.png" id="26_tjwi1"]
+[ext_resource type="Texture2D" uid="uid://b63p35x4xi1s6" path="res://assets/items/coloured_notes/Bb1 blue note.png" id="26_bhvib"]
 [ext_resource type="Texture2D" uid="uid://c5atrnegs5s18" path="res://assets/items/coloured_notes/B1 purple.png" id="28_msgrn"]
 [ext_resource type="Texture2D" uid="uid://bghwa6xsoqd8y" path="res://assets/items/coloured_notes/C2 red.png" id="30_r7nmv"]
 [ext_resource type="Texture2D" uid="uid://dw2g51xlbrwn6" path="res://assets/items/coloured_notes/C#2 pink.png" id="32_kad1e"]
@@ -370,7 +370,7 @@ stream = ExtResource("25_6hp05")
 visible = false
 position = Vector2(0.25, 0)
 scale = Vector2(0.45, 0.45)
-texture = ExtResource("26_tjwi1")
+texture = ExtResource("26_bhvib")
 
 [node name="B1" type="Area2D" parent="."]
 position = Vector2(20.25, 16.25)
