@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://duu1dtcvn0xm5"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://duu1dtcvn0xm5"]
 
 [ext_resource type="FontFile" uid="uid://dyxme1x64l31h" path="res://assets/fonts/MinimalPixel v2.ttf" id="1_euiat"]
 [ext_resource type="Texture2D" uid="uid://c3ovxjfkhnton" path="res://assets/ui/GUI.png" id="2_0mjvl"]
+[ext_resource type="FontFile" uid="uid://dvfnhr6stf66i" path="res://assets/fonts/Kenney Thick.ttf" id="2_vdawm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bupof"]
 content_margin_left = 4.0
@@ -55,4 +56,4 @@ Button/styles/focus = SubResource("StyleBoxTexture_arwyj")
 Button/styles/hover = SubResource("StyleBoxTexture_uvfa5")
 Button/styles/normal = SubResource("StyleBoxTexture_st6ci")
 Button/styles/pressed = SubResource("StyleBoxTexture_lrrsg")
-Label/fonts/font = ExtResource("1_euiat")
+Label/fonts/font = ExtResource("2_vdawm")
