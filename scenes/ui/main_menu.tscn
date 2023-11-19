@@ -172,6 +172,7 @@ volume_db = -10.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_p3o6a")
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
