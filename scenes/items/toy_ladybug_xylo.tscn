@@ -1,41 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://kpexsubl1ucm"]
+[gd_scene load_steps=6 format=3 uid="uid://ktco77gwjk15"]
 
-[ext_resource type="Script" path="res://scenes/items/toy_croco_xylo.gd" id="1_b0dc4"]
-[ext_resource type="Texture2D" uid="uid://pgpbdgfbuek" path="res://assets/items/croco_xylo.png" id="1_my1lo"]
-[ext_resource type="AudioStream" uid="uid://blnpjwokrg1fw" path="res://audio/music/marimba_lullaby_fade.wav" id="2_jwh4e"]
+[ext_resource type="Script" path="res://scenes/items/toy_croco_xylo.gd" id="1_rri3l"]
+[ext_resource type="AudioStream" uid="uid://0f51olhko5jy" path="res://audio/music/music_box_lullaby_fade.wav" id="2_ph0sc"]
+[ext_resource type="Texture2D" uid="uid://cey54syr27y45" path="res://assets/items/LABYBIRD TOY.png" id="3_y6oy1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhbko"]
-radius = 3.81935
+radius = 5.80645
+height = 24.5161
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdvti"]
-radius = 4.25455
-height = 30.0606
+radius = 6.06061
+height = 24.2424
 
-[node name="CrocoXylo" type="RigidBody2D"]
+[node name="ToyLadybugXylo" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 3
 gravity_scale = 2.66454e-15
 freeze = true
-script = ExtResource("1_b0dc4")
-music = ExtResource("2_jwh4e")
-key_1 = "eb1"
-key_2 = "ab1"
-key_3 = "cs2"
+script = ExtResource("1_rri3l")
+music = ExtResource("2_ph0sc")
+key_1 = "e1"
+key_2 = "g1"
+key_3 = "b1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_my1lo")
+texture = ExtResource("3_y6oy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.797, -1.92)
-rotation = 1.39626
+position = Vector2(0, 3)
+rotation = 1.5708
 scale = Vector2(1.55, 1.55)
 shape = SubResource("CapsuleShape2D_hhbko")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.8, -2.02)
-rotation = 1.39626
+position = Vector2(7.10543e-15, 3)
+rotation = 1.5708
 scale = Vector2(1.65, 1.65)
 shape = SubResource("CapsuleShape2D_pdvti")
 

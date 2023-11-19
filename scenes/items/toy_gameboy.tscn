@@ -1,41 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://kpexsubl1ucm"]
+[gd_scene load_steps=6 format=3 uid="uid://cjibh68526mvf"]
 
-[ext_resource type="Script" path="res://scenes/items/toy_croco_xylo.gd" id="1_b0dc4"]
-[ext_resource type="Texture2D" uid="uid://pgpbdgfbuek" path="res://assets/items/croco_xylo.png" id="1_my1lo"]
-[ext_resource type="AudioStream" uid="uid://blnpjwokrg1fw" path="res://audio/music/marimba_lullaby_fade.wav" id="2_jwh4e"]
+[ext_resource type="Script" path="res://scenes/items/toy_croco_xylo.gd" id="1_cvcrk"]
+[ext_resource type="AudioStream" uid="uid://ddsdswm67dwm7" path="res://audio/music/clav_lullaby.wav" id="2_mp8ci"]
+[ext_resource type="Texture2D" uid="uid://bods8m60ed6om" path="res://assets/items/GAMEBOY.png" id="3_ca4i2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhbko"]
-radius = 3.81935
+radius = 3.87097
+height = 11.6129
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdvti"]
 radius = 4.25455
-height = 30.0606
+height = 12.1212
 
-[node name="CrocoXylo" type="RigidBody2D"]
+[node name="ToyGameBoy" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 3
 gravity_scale = 2.66454e-15
 freeze = true
-script = ExtResource("1_b0dc4")
-music = ExtResource("2_jwh4e")
-key_1 = "eb1"
-key_2 = "ab1"
-key_3 = "cs2"
+script = ExtResource("1_cvcrk")
+music = ExtResource("2_mp8ci")
+key_1 = "c1"
+key_2 = "f1"
+key_3 = "bb1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_my1lo")
+texture = ExtResource("3_ca4i2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.797, -1.92)
-rotation = 1.39626
+position = Vector2(-4, -2)
 scale = Vector2(1.55, 1.55)
 shape = SubResource("CapsuleShape2D_hhbko")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.8, -2.02)
-rotation = 1.39626
+position = Vector2(-4, -2)
 scale = Vector2(1.65, 1.65)
 shape = SubResource("CapsuleShape2D_pdvti")
 

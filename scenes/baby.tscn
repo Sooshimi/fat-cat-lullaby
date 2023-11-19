@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://du8n2u6bk366n"]
+[gd_scene load_steps=31 format=3 uid="uid://du8n2u6bk366n"]
 
 [ext_resource type="Script" path="res://scenes/baby.gd" id="1_0363r"]
 [ext_resource type="Texture2D" uid="uid://bf8arr2oqkhox" path="res://assets/characters/baby_walk_4_direction.png" id="2_3fbd1"]
@@ -267,6 +267,9 @@ tracks/1/keys = {
 "values": [PackedVector2Array(-3, 10, -1, 10, -1, 9, 2, 6, -3, 6), PackedVector2Array(-3, 9, 0.5, 9, 2, 6, -3, 6), PackedVector2Array(0, 9, 2, 9, 2, 6, -3, 6), PackedVector2Array(-3, 9, 0.5, 9, 2, 6, -3, 6)]
 }
 
+[sub_resource type="Animation" id="Animation_rsvq4"]
+resource_name = "run_left_angry"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3yn75"]
 _data = {
 "RESET": SubResource("Animation_76xko"),
@@ -275,6 +278,7 @@ _data = {
 "idle_right_neutral": SubResource("Animation_qh8pk"),
 "idle_up": SubResource("Animation_ss6ds"),
 "run_down_neutral": SubResource("Animation_agsjt"),
+"run_left_angry": SubResource("Animation_rsvq4"),
 "run_left_neutral": SubResource("Animation_e086h"),
 "run_right_neutral": SubResource("Animation_114oe"),
 "run_up": SubResource("Animation_wjjnu")
