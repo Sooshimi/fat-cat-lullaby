@@ -14,5 +14,4 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	for key in keys:
-		piano.trigger_piano_key(key, false, 10.0, false)
+	piano.trigger_piano_key("", false, 10.0, false, true)

@@ -127,30 +127,43 @@ func _emit_key_played() -> void:
 # Triggers piano keys to play key sound, and show key colour and light up
 func trigger_piano_key(key:String, key_pressed:bool = true, time:float = 1.0,\
 light:bool = true, colour_button_pressed:bool = false) -> void:
-	for note in key_dictionary:
-		if note == key:
-			# Only run the below if a key is actually pressed. This func is
-			# also called from toys which light up the piano keys.
-			if key_pressed:
-				Global.keys_played.append(key)
-				key_dictionary[note]["sound"].play()
-				_emit_key_played()
-			
+	if !colour_button_pressed:
+		for note in key_dictionary:
+			if note == key:
+				# Only run the below if a key is actually pressed. This func is
+				# also called from toys which light up the piano keys.
+				if key_pressed:
+					Global.keys_played.append(key)
+					key_dictionary[note]["sound"].play()
+					_emit_key_played()
+				
+				key_dictionary[note]["colour_key"].show()
+				
+				if light:
+					key_dictionary[note]["light_key"].show()
+				
+				# Add timer to remove key colour and light
+				var timer : Timer = Timer.new()
+				add_child(timer)
+				timer.wait_time = time
+				timer.one_shot = true
+				timer.start()
+				await timer.timeout
+				key_dictionary[note]["colour_key"].hide()
+				key_dictionary[note]["light_key"].hide()
+				timer.queue_free()
+	else:
+		for note in key_dictionary:
 			key_dictionary[note]["colour_key"].show()
-			
-			if light:
-				key_dictionary[note]["light_key"].show()
-			
-			# Add timer to remove key colour and light
-			var timer : Timer = Timer.new()
-			add_child(timer)
-			timer.wait_time = time
-			timer.one_shot = true
-			timer.start()
-			await timer.timeout
+		var timer : Timer = Timer.new()
+		add_child(timer)
+		timer.wait_time = time
+		timer.one_shot = true
+		timer.start()
+		await timer.timeout
+		for note in key_dictionary:
 			key_dictionary[note]["colour_key"].hide()
-			key_dictionary[note]["light_key"].hide()
-			timer.queue_free()
+		timer.queue_free()
 
 func _on_b_0_body_entered(body):
 	trigger_piano_key("b0")
