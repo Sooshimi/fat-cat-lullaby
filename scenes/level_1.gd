@@ -50,6 +50,10 @@ func win():
 	baby.get_node("BabyLight").show()
 	baby.get_node("Sprite2D/LightOccluder2D").hide()
 	baby.animation_tree.get("parameters/playback").travel("Idle_Sleepy")
+	if AudioScene.toy_music.is_playing():
+		AudioScene.toy_music.stop()
+	player_light.hide()
+	shadow_light.hide()
 	AudioScene.play_game_over_music()
 	game_over_screen_timer.start()
 	win_fade_to_black = true
