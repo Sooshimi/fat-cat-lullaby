@@ -219,7 +219,7 @@ ui = NodePath("../CanvasLayer/UI")
 baby_emotion_trigger = "angry"
 
 [node name="Baby" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n3qp0")]
-position = Vector2(463, 252)
+position = Vector2(414, 266)
 player = NodePath("../FatCat")
 
 [node name="BabyLight" type="PointLight2D" parent="Baby"]
