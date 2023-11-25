@@ -13,7 +13,7 @@ var play_pressed : bool = false
 
 func _process(delta):
 	if play_pressed:
-		canvas.color = lerp(canvas.color, Color(0,0,0,1), 4 * delta)
+		canvas.color = lerp(canvas.color, Color(0,0,0,1), 5 * delta)
 		music.volume_db = lerp(music.volume_db, -80.0, 0.8 * delta)
 	if Global.win:
 		AudioScene.game_over_music.stop()
